@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customs table</title>
+    <style>
+        .but {
+            background-color: rgb(138, 228, 138);
+            border-color: rgb(103, 195, 103);
+            border-width: 2;
+            font-size: larger;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            cursor: pointer;
+            display: inline-block;
+            padding: 7px 17px;
+            margin-left: 43%;
+            margin-top: 2%;
+        }
+        td{
+            border: 1px solid black;
+        }
+        th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<button class="but" type="button">Show data</button><br>
+<div>
+<t2 style="padding-left: 42%;">Данные о пользователях</t2>
+<table style="padding-left: 25%;">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Роль</th>
+        <th>Имя пользователя</th>
+        <th>Пароль</th>
+        <th>Дата регистрации</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="item in customs" :key="item.user_id">
+        <td>{{item.user_id}}</td>
+        <td>{{item.user_role}}</td>
+        <td>{{item.user_name}}</td>
+        <td>{{item.user_password}}</td>
+        <td>{{item.registration_date}}</td>
+    </tr>
+    </tbody>
+</table>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="/js/app.js"></script>
+</div>
+</body>
+</html>
