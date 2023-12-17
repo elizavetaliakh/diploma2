@@ -4,20 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1b6e5db-2160-4abb-87ec-0f53ed15ac0b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+    <list default="true" id="c1b6e5db-2160-4abb-87ec-0f53ed15ac0b" name="Changes" comment="got from branch">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/http-common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/mapper/DefaultEntityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/app/config/db.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/app/controllers/customs.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/app/models/customs.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/app/models/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/app/routes/customs.routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/application-local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customs/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/mapper/DefaultEntityMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/mapper/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/rest/UserRestControllerV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/rest/UserRestControllerV1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/resources/application-local.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/resources/database/populateDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/resources/database/populateDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/CustomsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/CustomsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customs/src/main/resources/static/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/resources/static/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customs/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/resources/static/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,21 +71,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ДипломныйПроект/diploma2&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/ДипломныйПроект/diploma2",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ДипломныйПроект\diploma2\customs\src\main\resources\templates" />
+      <recent name="D:\ДипломныйПроект\diploma2\customs" />
+      <recent name="D:\ДипломныйПроект\diploma2\customs\src" />
+      <recent name="D:\ДипломныйПроект\diploma2\customs\src\main\java\com\diploma\customs" />
+      <recent name="D:\ДипломныйПроект\diploma2\customs\src\main\resources\nodejs-express-sequelize-postgresql\app\models" />
+      <recent name="D:\ДипломныйПроект\diploma2\customs\src\main\resources\nodejs-express-sequelize-postgresql\app\config" />
     </key>
   </component>
   <component name="RunManager">
@@ -134,5 +149,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="got from branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="got from branch" />
   </component>
 </project>

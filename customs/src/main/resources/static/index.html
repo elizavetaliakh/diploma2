@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Customs table</title>
@@ -8,14 +8,10 @@
             background-color: rgb(138, 228, 138);
             border-color: rgb(103, 195, 103);
             border-width: 2;
-            font-size: larger;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: bolder;
             cursor: pointer;
             display: inline-block;
-            padding: 7px 17px;
-            margin-left: 43%;
-            margin-top: 2%;
         }
         td{
             border: 1px solid black;
@@ -24,12 +20,13 @@
             border: 1px solid black;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-<button class="but" type="button">Show data</button><br>
-<div>
-<t2 style="padding-left: 42%;">Данные о пользователях</t2>
-<table style="padding-left: 25%;">
+<div id="fetchAlldiv">
+<t2>Данные о пользователях</t2>
+<table>
     <thead>
     <tr>
         <th>ID</th>
@@ -37,20 +34,105 @@
         <th>Имя пользователя</th>
         <th>Пароль</th>
         <th>Дата регистрации</th>
+        <th>Редактировать</th>
+        <th>Удалить</th>
     </tr>
     </thead>
     <tbody>
-    <tr v-for="item in customs" :key="item.user_id">
-        <td>{{item.user_id}}</td>
-        <td>{{item.user_role}}</td>
-        <td>{{item.user_name}}</td>
-        <td>{{item.user_password}}</td>
-        <td>{{item.registration_date}}</td>
+    <tr th:each="user : ${usersList}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.userRole}"></td>
+        <td th:text="${user.userName}"></td>
+        <td th:text="${user.userPassword}"></td>
+        <td th:text="${user.registrationDate}"></td>
+        <td><button type="button" name="edit" class="but">Edit</button></td>
+        <td><button type="button" name="delete" class="but">Delete</button></td>
     </tr>
     </tbody>
 </table>
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-<script src="/js/app.js"></script>
+<script src="app.js"></script>
 </div>
+</body>
+</html> -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Customs users</title>
+    </head>
+<body>
+    <!-- <style>
+        #databinding {
+            padding: 15px 10px 10px 10px;
+            margin: 0 0 20px 0;
+            width: auto;
+        }
+        span, option, input {
+            font-size: 15px;
+        }
+        .Table{
+            display: table;
+            width:fit-content;
+         }
+         .Title{
+            display: table-caption;
+            text-align: center;
+            font-weight: bold;
+            font-size: larger;
+         }
+         .Heading{
+            display: table-row;
+            font-weight: bold;
+            text-align: center;
+         }
+         .Row{
+            display: table-row;
+         }
+         .Cell{
+            display: table-cell;
+            border: solid;
+            border-width: thin;
+            padding-left: 1px;
+            padding-right: 1px;
+            width:300px;
+         }
+    </style> -->
+    <div id="app">
+        <users-list :users="users"/>
+    </div><hr/>
+    <!-- <div id = "databinding" style="width: auto;">
+        <h1>User Details</h1>
+        <span>User role</span>
+        <input type = "text" placeholder = "Enter user role" v-model = "userRole"/><br>
+        <span>User name</span>
+        <input type = "text" placeholder = "Enter user name" v-model = "userName"/><br>
+        <span>User password</span>
+        <input type = "text" placeholder = "Enter user password" v-model = "userPassword"/><br>
+        <span>Registration date</span>
+        <input type = "text" placeholder = "Enter registration date" v-model = "registrationDate"/><br>
+        <button v-on:click = "showdata" v-bind:style = "styleobj">Add</button>
+        <br/>
+        <br/>
+        <usercomponent
+           v-for = "(item, index) in custdet"
+           v-bind:item = "item"
+           v-bind:index = "index"
+           v-bind:itr = "item"
+           v-bind:key = "item.userName"
+           v-on:removeelement = "custdet.splice(index, 1)">
+        </usercomponent>
+     </div>
+     <div>      
+        <button @click="getUsers" v-bind:style = "styleobj">Show all</button>
+        <div v-for="user in users" :key="user.id">
+            <p>{{ user.id }} - {{ user.userName }} - {{ user.userRole }} - {{ user.userPassword }} - {{ user.registrationDate }}</p>
+        </div>
+     </div> -->
+     <script src="https://unpkg.com/vue@2.7.14/dist/vue.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
+     <script src = "app.js"></script>
 </body>
 </html>
