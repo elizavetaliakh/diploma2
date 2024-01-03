@@ -22,9 +22,12 @@
       <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/package.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/server.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/customs/src/main/resources/application-local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/authorization.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/dbstructure.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/dbstyles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/styles2.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/customs/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customs/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/CustomsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/CustomsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customs/src/main/resources/static/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/resources/static/app.js" afterDir="false" />
@@ -40,6 +43,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -73,6 +77,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",

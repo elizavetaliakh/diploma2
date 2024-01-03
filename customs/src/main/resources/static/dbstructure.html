@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Database structure</title>
+    <link rel="stylesheet" href="dbstyles.css" />
+</head>
+<body>
+<div class="divUpper">
+    <label for="tables" style="padding-right: 5px">Выберите таблицу:</label>
+    <select id="tables" name="tables" class="selectStyle">
+        <option value="table1">Таблица 1</option>
+        <option value="table2">Таблица 2</option>
+    </select>
+</div>
+<div class="sidenav">
+    <a href="#">Структура БД</a>
+    <a href="#">Круговая диаграмма</a>
+    <a href="#">Столбчатая диаграмма</a>
+    <a href="#">Линейная диаграмма</a>
+    <a href="#">Конструктор отчетов</a>
+</div>
+<div class="main">
+    <table class="tableOutput">
+        <tr>
+            <td>Тип данных 1</td>
+            <td>Тип данных 2</td>
+            <td>Тип данных 3</td>
+            <td>Тип данных 4</td>
+            <td>Тип данных 5</td>
+        </tr>
+        <tr style="border-bottom: 3px solid black">
+            <td>Столбец 1</td>
+            <td>Столбец 2</td>
+            <td>Столбец 3</td>
+            <td>Столбец 4</td>
+            <td>Столбец 5</td>
+        </tr>
+        <tr>
+            <td>Значение 1</td>
+            <td>Значение 2</td>
+            <td>Значение 3</td>
+            <td>Значение 4</td>
+            <td>Значение 5</td>
+        </tr>
+    </table>
+    <div class="queryConstructorDiv">
+        <div style="width: 50%; display: inline-block;">
+            <p style="padding-bottom: 5px;">Конструктор SQL запроса:</p>
+            <table style="border: 0px; table-layout: fixed; border-collapse: collapse;">
+                <tr>
+                    <td style="padding: 2px;">SELECT</td>
+                    <td style="padding: 2px;"><input type="text" id="select" name="select" required minlength="1" size="20"/></td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">DISTINCT</td>
+                    <td style="padding: 2px;">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">FROM</td>
+                    <td style="padding: 2px;"><input type="text" id="from" name="from" required minlength="1" size="20"/></td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">WHERE</td>
+                    <td style="padding: 2px;"><input type="text" id="where" name="where" required minlength="1" size="20"/></td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">AND</td>
+                    <td style="padding: 2px;">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">GROUP BY</td>
+                    <td style="padding: 2px;"><input type="text" id="groupBy" name="groupBy" required minlength="1" size="20"/></td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">ORDER BY</td>
+                    <td style="padding: 2px;"><input type="text" id="orderBy" name="orderBy" required minlength="1" size="20"/></td>
+                </tr>
+            </table>
+            <p style="padding-bottom: 5px;"><button class="buttons" type="button" id="makeQuery" name="makeQuery" width="15px" height="10px">Сформировать</button></p>
+            <textarea id="sqlText" name="sqlText"
+                      style="font-size:16px;
+            height: 150px;
+            width: 98%;
+            resize: none;" >
+          </textarea>
+            <div style="display: flex; padding-left: 65%; padding-top: 5px;">
+                <div style="display: inline-block; padding-right: 5px;"><button class="buttons" type="button" id="saveQuery" name="saveQuery" width="15px" height="10px">Сохранить</button></div>
+                <div style="display: inline-block;"><button class="buttons" type="button" id="executeQuery" name="executeQuery" width="15px" height="10px">Выполнить</button></div>
+            </div>
+        </div>
+        <div style="width: 50%; display: inline-block;">
+            <p style="padding-bottom: 5px;">История запросов:</p>
+            <textarea id="sqlHistory" name="sqlHistory"
+                      style="font-size:16px;
+            height: 375px;
+            width: 98%;
+            resize: none;" >
+          </textarea>
+        </div>
+    </div>
+</div>
+</body>
+</html>
