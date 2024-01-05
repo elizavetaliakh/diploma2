@@ -4,34 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1b6e5db-2160-4abb-87ec-0f53ed15ac0b" name="Changes" comment="got from branch">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/http-common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/mapper/DefaultEntityMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/app/config/db.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/app/controllers/customs.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/app/models/customs.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/app/models/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/app/routes/customs.routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/nodejs-express-sequelize-postgresql/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/application-local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/authorization.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/dbstructure.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/dbstyles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/styles2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customs/vue.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customs/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/CustomsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/java/com/diploma/customs/CustomsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/resources/static/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/resources/static/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customs/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/customs/src/main/resources/static/index.html" afterDir="false" />
+    <list default="true" id="c1b6e5db-2160-4abb-87ec-0f53ed15ac0b" name="Changes" comment="made web pages for authorization and db structure (2)">
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/barChart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/barChartStyles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/lineChart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/lineChartStyles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/pieChart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/pieChartStyles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/reports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customs/src/main/resources/static/reportsStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,19 +57,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/ДипломныйПроект/diploma2",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/ДипломныйПроект/diploma2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ДипломныйПроект\diploma2\customs" />
@@ -130,6 +112,14 @@
       <option name="presentableId" value="Default" />
       <updated>1702286163222</updated>
     </task>
+    <task id="LOCAL-00001" summary="made web pages for authorization and db structure (2)">
+      <created>1704269734890</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704269734890</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +147,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="got from branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="got from branch" />
+    <MESSAGE value="made web pages for authorization and db structure (2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="made web pages for authorization and db structure (2)" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/diploma2$CustomsApplication.ic" NAME="CustomsApplication Coverage Results" MODIFIED="1704362572787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.diploma.customs.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pie chart</title>
+    <link rel="stylesheet" href="pieChartStyles.css" />
+</head>
+<body>
+<div class="divUpper"></div>
+<div class="sidenav">
+    <a href="#">Структура БД</a>
+    <a href="#">Круговая диаграмма</a>
+    <a href="#">Столбчатая диаграмма</a>
+    <a href="#">Линейная диаграмма</a>
+    <a href="#">Конструктор отчетов</a>
+</div>
+<div class="main">
+    <div style="height: 40%; position: absolute; bottom: 0;">
+        <div class="parameters">
+            <div style="width: 250px; display: inline-block">
+                <table
+                        style="border: 0px; table-layout: fixed; border-collapse: collapse; "
+                >
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right">
+                            Таблица:
+                        </td>
+                        <td class="col2" style="padding: 2px">
+                            <select id="tables" name="tables" class="selectStyle">
+                                <option value="table1">Таблица 1</option>
+                                <option value="table2">Таблица 2</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 2px; text-align: right; width: 200px">
+                            Список значений по полю:
+                        </td>
+                        <td style="padding: 2px">
+                            <select
+                                    id="fieldsValues"
+                                    name="fieldsValues"
+                                    class="selectStyle"
+                            >
+                                <option value="field1">поле 1</option>
+                                <option value="field2">поле 2</option>
+                                <option value="field3">поле 3</option>
+                                <option value="field4">поле 4</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right">
+                            Поле для пересчета:
+                        </td>
+                        <td class="col2" style="padding: 2px">
+                            <select
+                                    id="fieldsRecount"
+                                    name="fieldsRecount"
+                                    class="selectStyle"
+                            >
+                                <option value="fieldRecount1">поле 1</option>
+                                <option value="fieldRecount2">поле 2</option>
+                                <option value="fieldRecount3">поле 3</option>
+                                <option value="fieldRecount4">поле 4</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="width: 60%; display: inline-block;">
+                <table
+                        style="border: 0px; table-layout: fixed; border-collapse: collapse;"
+                >
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right">
+                            Фильтрация:
+                        </td>
+                        <td class="col2" style="padding: 2px"></td>
+                    </tr>
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right">
+                            по дате:
+                        </td>
+                        <td class="col2" style="padding: 2px">
+                            <select id="fieldsDate" name="fieldsDate" class="selectStyle">
+                                <option value="fieldDate1">поле 1</option>
+                                <option value="fieldDate2">поле 2</option>
+                            </select>
+                            от<input type="text" id="dateFrom" name="dateFrom" required minlength="10" maxlength="10" size="10" placeholder="YYYY-MM-DD"/>
+                            до<input type="text" id="dateTo" name="dateTo" required minlength="10" maxlength="10" size="10" placeholder="YYYY-MM-DD"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right">
+                            по значению:
+                        </td>
+                        <td class="col2" style="padding: 2px">
+                            <select id="valuesFilterFields" name="valuesFilterFields" class="selectStyle">
+                                <option value="valueFilterField1">поле 1</option>
+                                <option value="valueFilterField2">поле 2</option>
+                            </select>
+                            -<select id="valuesFilterValues" name="valuesFilterValues" class="selectStyle">
+                            <option value="valueFilterValue1">значение поля 1</option>
+                            <option value="valueFilterValue2">значение поля 2</option>
+                            <option value="valueFilterValue3">значение поля 3</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right"></td>
+                        <td class="col2" style="padding: 2px"><p style="padding-bottom: 5px;"><button class="buttons" type="button" id="makeQuery" name="makeQuery" width="15px" height="10px">Сформировать</button></p></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div style="position: absolute; padding-top: 150px; padding-left: 100px;">
+        <div class="chartPart">
+            <div style="width: 500px; display: inline-block;">
+                <div id="pieChart">
+                </div>
+            </div>
+            <div id="legenda" style="width: 200px; display: inline-block; text-align: left; padding-top: 30px;">
+                Список значений:
+                <div class="entry">
+                    <div id="color-brown" class="entry-color"></div>
+                    <div class="entry-text">Значение 1</div>
+                </div>
+                <div class="entry">
+                    <div id="color-black" class="entry-color"></div>
+                    <div class="entry-text">Значение 2</div>
+                </div>
+                <div class="entry">
+                    <div id="color-blue" class="entry-color"></div>
+                    <div class="entry-text">Значение 3</div>
+                </div>
+                <div class="entry">
+                    <div id="color-green" class="entry-color"></div>
+                    <div class="entry-text">Значение 4</div>
+                </div>
+                <div class="entry">
+                    <div id="color-yellow" class="entry-color"></div>
+                    <div class="entry-text">Значение 5</div>
+                </div>
+                <div class="entry">
+                    <div id="color-orange" class="entry-color"></div>
+                    <div class="entry-text">Значение 6</div>
+                </div>
+                <div class="entry">
+                    <div id="color-red" class="entry-color"></div>
+                    <div class="entry-text">Значение 7</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

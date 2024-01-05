@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Didact+Gothic|Comfortaa:400,700&subset=latin,cyrillic);
+
+.divUpper {
+  top: 0;
+  left: 0;
+  z-index: 0;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(82, 99, 53);
+  padding-left: 300px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: "Comfortaa", cursive;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "Comfortaa", cursive;
+  color: #f1f1f1;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.textStyle {
+  font-family: "Comfortaa", cursive;
+}
+.sidenav {
+  height: 100%;
+  width: 280px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(46, 56, 30);
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 20px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Comfortaa", cursive;
+  color: #ababab;
+  display: block;
+}
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+/* Style page content */
+.main {
+  margin-left: 280px;
+  margin-top: 35px;
+  padding: 10px 10px;
+  position: relative;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+.selectStyle {
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "Comfortaa", cursive;
+  color: #000000;
+  height: 20px;
+  border-radius: 5px;
+}
+.parameters {
+  padding-top: 10px;
+  font-family: "Comfortaa", cursive;
+  font-size: 14px;
+  display: flex;
+}
+table {
+  width: 100%;
+  .col1 {
+    width: 240px;
+  }
+  .col2 {
+    width: 400px;
+  }
+}
+.buttons {
+  font-family: "Comfortaa", cursive;
+  font-size: 14px;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 3px;
+}
+html,
+body,
+#container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

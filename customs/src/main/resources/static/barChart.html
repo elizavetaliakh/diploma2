@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bar chart</title>
+    <link rel="stylesheet" href="barChartStyles.css" />
+</head>
+<body>
+<div class="divUpper"></div>
+<div class="sidenav">
+    <a href="#">Структура БД</a>
+    <a href="#">Круговая диаграмма</a>
+    <a href="#">Столбчатая диаграмма</a>
+    <a href="#">Линейная диаграмма</a>
+    <a href="#">Конструктор отчетов</a>
+</div>
+<div class="main">
+    <div style="height: 40%; position: absolute">
+        <div class="parameters">
+            <div style="width: 280px; display: inline-block">
+                <table
+                        style="
+                border: 0px;
+                table-layout: fixed;
+                border-collapse: collapse;
+              "
+                >
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right">
+                            Таблица:
+                        </td>
+                        <td class="col2" style="padding: 2px">
+                            <select id="tables" name="tables" class="selectStyle">
+                                <option value="table1">Таблица 1</option>
+                                <option value="table2">Таблица 2</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 2px; text-align: right; width: 200px">
+                            Список значений по полю:
+                        </td>
+                        <td style="padding: 2px">
+                            <select
+                                    id="fieldsValues"
+                                    name="fieldsValues"
+                                    class="selectStyle"
+                            >
+                                <option value="field1">поле 1</option>
+                                <option value="field2">поле 2</option>
+                                <option value="field3">поле 3</option>
+                                <option value="field4">поле 4</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right">
+                            Поле для пересчета:
+                        </td>
+                        <td class="col2" style="padding: 2px">
+                            <select
+                                    id="fieldsRecount"
+                                    name="fieldsRecount"
+                                    class="selectStyle"
+                            >
+                                <option value="fieldRecount1">поле 1</option>
+                                <option value="fieldRecount2">поле 2</option>
+                                <option value="fieldRecount3">поле 3</option>
+                                <option value="fieldRecount4">поле 4</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 2px; text-align: right; width: 200px">
+                            Считать по отношению к
+                        </td>
+                        <td style="padding: 2px">
+                            <select
+                                    id="towardsValues"
+                                    name="towardsValues"
+                                    class="selectStyle"
+                            >
+                                <option value="towardValue1">сумма по полю</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="width: 60%; display: inline-block">
+                <table
+                        style="
+                border: 0px;
+                table-layout: fixed;
+                border-collapse: collapse;
+              "
+                >
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right">
+                            Фильтрация:
+                        </td>
+                        <td class="col2" style="padding: 2px"></td>
+                    </tr>
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right">
+                            по дате:
+                        </td>
+                        <td class="col2" style="padding: 2px">
+                            <select id="fieldsDate" name="fieldsDate" class="selectStyle">
+                                <option value="fieldDate1">поле 1</option>
+                                <option value="fieldDate2">поле 2</option>
+                            </select>
+                            от<input
+                                type="text"
+                                id="dateFrom"
+                                name="dateFrom"
+                                required
+                                minlength="10"
+                                maxlength="10"
+                                size="10"
+                                placeholder="YYYY-MM-DD"
+                        />
+                            до<input
+                                type="text"
+                                id="dateTo"
+                                name="dateTo"
+                                required
+                                minlength="10"
+                                maxlength="10"
+                                size="10"
+                                placeholder="YYYY-MM-DD"
+                        />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right">
+                            по значению:
+                        </td>
+                        <td class="col2" style="padding: 2px">
+                            <select
+                                    id="valuesFilterFields"
+                                    name="valuesFilterFields"
+                                    class="selectStyle"
+                            >
+                                <option value="valueFilterField1">поле 1</option>
+                                <option value="valueFilterField2">поле 2</option>
+                            </select>
+                            -<select
+                                id="valuesFilterValues"
+                                name="valuesFilterValues"
+                                class="selectStyle"
+                        >
+                            <option value="valueFilterValue1">значение поля 1</option>
+                            <option value="valueFilterValue2">значение поля 2</option>
+                            <option value="valueFilterValue3">значение поля 3</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col1" style="padding: 2px; text-align: right"></td>
+                        <td class="col2" style="padding: 2px">
+                            <p style="padding-bottom: 5px">
+                                <button
+                                        class="buttons"
+                                        type="button"
+                                        id="makeQuery"
+                                        name="makeQuery"
+                                        width="15px"
+                                        height="10px"
+                                >
+                                    Сформировать
+                                </button>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div
+            id="anychart-embed-samples-bct-bar-chart-01"
+            class="anychart-embed anychart-embed-samples-bct-bar-chart-01"
+            style="position: absolute"
+    >
+        <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+        <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+        <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+        <div id="ac_style_samples-bct-bar-chart-01" style="display: none">
+            html, body, #container { width: 100%; height: 100%; margin: 0;
+            padding: 0; }
+        </div>
+        <script>
+          (function () {
+            function ac_add_to_head(el) {
+              var head = document.getElementsByTagName("head")[0];
+              head.insertBefore(el, head.firstChild);
+            }
+            function ac_add_link(url) {
+              var el = document.createElement("link");
+              el.rel = "stylesheet";
+              el.type = "text/css";
+              el.media = "all";
+              el.href = url;
+              ac_add_to_head(el);
+            }
+            function ac_add_style(css) {
+              var ac_style = document.createElement("style");
+              if (ac_style.styleSheet) ac_style.styleSheet.cssText = css;
+              else ac_style.appendChild(document.createTextNode(css));
+              ac_add_to_head(ac_style);
+            }
+            ac_add_link(
+              "https://cdn.anychart.com/releases/8.12.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4"
+            );
+            ac_add_style(
+              document.getElementById("ac_style_samples-bct-bar-chart-01")
+                .innerHTML
+            );
+            ac_add_style(
+              ".anychart-embed-samples-bct-bar-chart-01{width:600px;height:450px;}"
+            );
+          })();
+        </script>
+        <div id="container" style="padding-top: 130px"></div>
+        <script>
+          anychart.onDocumentReady(function () {
+            var data = anychart.data.set([
+              ["значение 1", 14],
+              ["значение 2", 19],
+              ["значение 3", 14],
+              ["значение 4", 25],
+              ["значение 5", 9],
+            ]);
+            var chart = anychart.bar();
+            var series = chart.bar(data);
+            chart.xAxis().title("Значения по полю");
+            chart.yAxis().title("Количество, шт");
+            chart.container("container");
+            chart.draw();
+          });
+        </script>
+    </div>
+</div>
+</body>
+</html>

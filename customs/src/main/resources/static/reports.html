@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Report constructor</title>
+    <link rel="stylesheet" href="reportsStyles.css" />
+</head>
+<body>
+<div class="divUpper"></div>
+<div class="sidenav">
+    <a href="#">Структура БД</a>
+    <a href="#">Круговая диаграмма</a>
+    <a href="#">Столбчатая диаграмма</a>
+    <a href="#">Линейная диаграмма</a>
+    <a href="#">Конструктор отчетов</a>
+</div>
+<div class="main">
+    <h3 style="text-align: center;font-family: Comfortaa, cursive;">Сформировать отчет по количественным показателям</h3>
+    <div style="height: 40%; position: absolute">
+        <div class="parameters" style="width: 100%; display: inline-block">
+            <table
+                    style="
+                border: 0px;
+                table-layout: fixed;
+                border-collapse: collapse;
+              "
+            >
+                <tr>
+                    <td class="col1" style="padding: 2px; text-align: right">
+                        Таблица:
+                    </td>
+                    <td class="col2" style="padding: 2px">
+                        <select id="tables" name="tables" class="selectStyle">
+                            <option value="table1">Таблица 1</option>
+                            <option value="table2">Таблица 2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1" style="padding: 2px; text-align: right">
+                        Период по полю:
+                    </td>
+                    <td class="col2" style="padding: 2px">
+                        <select id="periodFields" name="periodFields" class="selectStyle">
+                            <option value="periodField1">поле 1</option>
+                            <option value="periodField2">поле 2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1" style="padding: 2px; text-align: right">
+                        от
+                    </td>
+                    <td class="col2" style="padding: 2px">
+                        <input type="text" id="periodFrom" name="periodFrom" required minlength="10" maxlength="10" size="10" placeholder="YYYY-MM-DD"/>до<input type="text" id="periodTo" name="periodTo" required minlength="10" maxlength="10" size="10" placeholder="YYYY-MM-DD"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1" style="padding: 2px; text-align: right">
+                        Поля:
+                    </td>
+                    <td class="col2" style="padding: 2px">
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+                        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+                        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+                        <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" type="text/css"/>
+                        <script>
+                    $(document).ready(function() {
+                    $('#example-getting-started').multiselect();
+                    });
+                  </script>
+
+                        <select id="fields" name="fields" multiple="multiple" class="selectStyle">
+                            <option value="field1">поле 1</option>
+                            <option value="field2">поле 2</option>
+                            <option value="field3">поле 3</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div style="text-align: center; padding-left: 65px;"><button
+                    class="buttons"
+                    type="button"
+                    id="makeReport"
+                    name="makeReport"
+                    width="50px"
+                    height="10px"
+            >
+                Скачать
+            </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
