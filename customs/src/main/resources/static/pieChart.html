@@ -17,11 +17,15 @@
     <a href="#">Конструктор отчетов</a>
 </div>
 <div class="main">
-    <div style="height: 40%; position: absolute; bottom: 0;">
+    <div style="height: 40%; position: absolute; bottom: 0">
         <div class="parameters">
-            <div style="width: 250px; display: inline-block">
+            <div style="width: 700px; display: inline-block; z-index: 2">
                 <table
-                        style="border: 0px; table-layout: fixed; border-collapse: collapse; "
+                        style="
+                border: 0px;
+                table-layout: fixed;
+                border-collapse: collapse;
+              "
                 >
                     <tr>
                         <td class="col1" style="padding: 2px; text-align: right">
@@ -33,12 +37,19 @@
                                 <option value="table2">Таблица 2</option>
                             </select>
                         </td>
+                        <td class="col3" style="padding: 2px; text-align: right">
+                            Фильтрация:
+                        </td>
+                        <td class="col4" style="padding: 2px"></td>
                     </tr>
                     <tr>
-                        <td style="padding: 2px; text-align: right; width: 200px">
+                        <td
+                                class="col1"
+                                style="padding: 2px; text-align: right; width: 200px"
+                        >
                             Список значений по полю:
                         </td>
-                        <td style="padding: 2px">
+                        <td class="col2" style="padding: 2px">
                             <select
                                     id="fieldsValues"
                                     name="fieldsValues"
@@ -49,6 +60,35 @@
                                 <option value="field3">поле 3</option>
                                 <option value="field4">поле 4</option>
                             </select>
+                        </td>
+                        <td class="col3" style="padding: 2px; text-align: right">
+                            по дате:
+                        </td>
+                        <td class="col4" style="padding: 2px">
+                            <select id="fieldsDate" name="fieldsDate" class="selectStyle">
+                                <option value="fieldDate1">поле 1</option>
+                                <option value="fieldDate2">поле 2</option>
+                            </select>
+                            от<input
+                                type="text"
+                                id="dateFrom"
+                                name="dateFrom"
+                                required
+                                minlength="10"
+                                maxlength="10"
+                                size="10"
+                                placeholder="YYYY-MM-DD"
+                        />
+                            до<input
+                                type="text"
+                                id="dateTo"
+                                name="dateTo"
+                                required
+                                minlength="10"
+                                maxlength="10"
+                                size="10"
+                                placeholder="YYYY-MM-DD"
+                        />
                         </td>
                     </tr>
                     <tr>
@@ -67,42 +107,23 @@
                                 <option value="fieldRecount4">поле 4</option>
                             </select>
                         </td>
-                    </tr>
-                </table>
-            </div>
-            <div style="width: 60%; display: inline-block;">
-                <table
-                        style="border: 0px; table-layout: fixed; border-collapse: collapse;"
-                >
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
-                            Фильтрация:
-                        </td>
-                        <td class="col2" style="padding: 2px"></td>
-                    </tr>
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
-                            по дате:
-                        </td>
-                        <td class="col2" style="padding: 2px">
-                            <select id="fieldsDate" name="fieldsDate" class="selectStyle">
-                                <option value="fieldDate1">поле 1</option>
-                                <option value="fieldDate2">поле 2</option>
-                            </select>
-                            от<input type="text" id="dateFrom" name="dateFrom" required minlength="10" maxlength="10" size="10" placeholder="YYYY-MM-DD"/>
-                            до<input type="text" id="dateTo" name="dateTo" required minlength="10" maxlength="10" size="10" placeholder="YYYY-MM-DD"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
+                        <td class="col3" style="padding: 2px; text-align: right">
                             по значению:
                         </td>
-                        <td class="col2" style="padding: 2px">
-                            <select id="valuesFilterFields" name="valuesFilterFields" class="selectStyle">
+                        <td class="col4" style="padding: 2px">
+                            <select
+                                    id="valuesFilterFields"
+                                    name="valuesFilterFields"
+                                    class="selectStyle"
+                            >
                                 <option value="valueFilterField1">поле 1</option>
                                 <option value="valueFilterField2">поле 2</option>
                             </select>
-                            -<select id="valuesFilterValues" name="valuesFilterValues" class="selectStyle">
+                            -<select
+                                id="valuesFilterValues"
+                                name="valuesFilterValues"
+                                class="selectStyle"
+                        >
                             <option value="valueFilterValue1">значение поля 1</option>
                             <option value="valueFilterValue2">значение поля 2</option>
                             <option value="valueFilterValue3">значение поля 3</option>
@@ -110,53 +131,115 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="col1" style="padding: 2px; text-align: right"></td>
-                        <td class="col2" style="padding: 2px"><p style="padding-bottom: 5px;"><button class="buttons" type="button" id="makeQuery" name="makeQuery" width="15px" height="10px">Сформировать</button></p></td>
+                        <td class="col1"></td>
+                        <td class="col2"></td>
+                        <td class="col3"></td>
+                        <td class="col4" style="padding: 2px">
+                            <p style="padding-bottom: 5px; text-align: right; padding-top: 5px;">
+                                <button
+                                        class="buttons"
+                                        type="button"
+                                        id="makeQuery"
+                                        name="makeQuery"
+                                        width="15px"
+                                        height="10px"
+                                >
+                                    Сформировать
+                                </button>
+                            </p>
+                        </td>
                     </tr>
                 </table>
             </div>
         </div>
     </div>
-    <div style="position: absolute; padding-top: 150px; padding-left: 100px;">
-        <div class="chartPart">
-            <div style="width: 500px; display: inline-block;">
-                <div id="pieChart">
-                </div>
-            </div>
-            <div id="legenda" style="width: 200px; display: inline-block; text-align: left; padding-top: 30px;">
-                Список значений:
-                <div class="entry">
-                    <div id="color-brown" class="entry-color"></div>
-                    <div class="entry-text">Значение 1</div>
-                </div>
-                <div class="entry">
-                    <div id="color-black" class="entry-color"></div>
-                    <div class="entry-text">Значение 2</div>
-                </div>
-                <div class="entry">
-                    <div id="color-blue" class="entry-color"></div>
-                    <div class="entry-text">Значение 3</div>
-                </div>
-                <div class="entry">
-                    <div id="color-green" class="entry-color"></div>
-                    <div class="entry-text">Значение 4</div>
-                </div>
-                <div class="entry">
-                    <div id="color-yellow" class="entry-color"></div>
-                    <div class="entry-text">Значение 5</div>
-                </div>
-                <div class="entry">
-                    <div id="color-orange" class="entry-color"></div>
-                    <div class="entry-text">Значение 6</div>
-                </div>
-                <div class="entry">
-                    <div id="color-red" class="entry-color"></div>
-                    <div class="entry-text">Значение 7</div>
-                </div>
-            </div>
+    <div
+            id="anychart-embed-src-pie-and-donut-charts-pie-chart"
+            class="anychart-embed anychart-embed-src-pie-and-donut-charts-pie-chart"
+            style="position: absolute"
+    >
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+        <div
+                id="ac_style_src-pie-and-donut-charts-pie-chart"
+                style="display: none"
+        >
+            html, body, #container { width: 120%; height: 120%; margin: 0;
+            padding: 0; }
         </div>
+        <script>
+          (function () {
+            function ac_add_to_head(el) {
+              var head = document.getElementsByTagName("head")[0];
+              head.insertBefore(el, head.firstChild);
+            }
+            function ac_add_link(url) {
+              var el = document.createElement("link");
+              el.rel = "stylesheet";
+              el.type = "text/css";
+              el.media = "all";
+              el.href = url;
+              ac_add_to_head(el);
+            }
+            function ac_add_style(css) {
+              var ac_style = document.createElement("style");
+              if (ac_style.styleSheet) ac_style.styleSheet.cssText = css;
+              else ac_style.appendChild(document.createTextNode(css));
+              ac_add_to_head(ac_style);
+            }
+            ac_add_link(
+              "https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css"
+            );
+            ac_add_link(
+              "https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css"
+            );
+            ac_add_style(
+              document.getElementById(
+                "ac_style_src-pie-and-donut-charts-pie-chart"
+              ).innerHTML
+            );
+            ac_add_style(
+              ".anychart-embed-src-pie-and-donut-charts-pie-chart{width:600px;height:450px;}"
+            );
+          })();
+        </script>
+        <div
+                id="container"
+                style="padding-top: 110px; padding-left: 80px"
+        ></div>
+        <script>
+          anychart.onDocumentReady(function () {
+            // create pie chart with passed data
+            var data = anychart.data.set([
+              ["значение 1", 69.2, 24.2],
+              ["значение 2", 85, 334],
+              ["значение 3", 32.1, 1045],
+              ["значение 4", 8.2, 3038],
+            ]);
+
+            var wealth = data.mapAs({ x: 0, value: 1 });
+
+            var chart = anychart.pie(wealth);
+            chart
+              .labels()
+              .hAlign("center")
+              .position("outside")
+              .format("{%Value} trn.n({%PercentOfCategory}%)");
+            chart
+              .legend()
+              // set legend position and items layout
+              .position("right")
+              .itemsLayout("vertical")
+              .align("center");
+
+            // set container id for the chart
+            chart.container("container");
+            // initiate chart drawing
+            chart.draw();
+          });
+        </script>
     </div>
-</div>
 </div>
 </body>
 </html>

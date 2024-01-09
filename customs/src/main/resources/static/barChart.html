@@ -19,7 +19,7 @@
 <div class="main">
     <div style="height: 40%; position: absolute">
         <div class="parameters">
-            <div style="width: 280px; display: inline-block">
+            <div style="width: 700px; display: inline-block; z-index: 2;">
                 <table
                         style="
                 border: 0px;
@@ -37,12 +37,19 @@
                                 <option value="table2">Таблица 2</option>
                             </select>
                         </td>
+                        <td class="col3" style="padding: 2px; text-align: right">
+                            Фильтрация:
+                        </td>
+                        <td class="col4" style="padding: 2px"></td>
                     </tr>
                     <tr>
-                        <td style="padding: 2px; text-align: right; width: 200px">
+                        <td
+                                class="col1"
+                                style="padding: 2px; text-align: right; width: 200px"
+                        >
                             Список значений по полю:
                         </td>
-                        <td style="padding: 2px">
+                        <td class="col2" style="padding: 2px">
                             <select
                                     id="fieldsValues"
                                     name="fieldsValues"
@@ -54,59 +61,10 @@
                                 <option value="field4">поле 4</option>
                             </select>
                         </td>
-                    </tr>
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
-                            Поле для пересчета:
-                        </td>
-                        <td class="col2" style="padding: 2px">
-                            <select
-                                    id="fieldsRecount"
-                                    name="fieldsRecount"
-                                    class="selectStyle"
-                            >
-                                <option value="fieldRecount1">поле 1</option>
-                                <option value="fieldRecount2">поле 2</option>
-                                <option value="fieldRecount3">поле 3</option>
-                                <option value="fieldRecount4">поле 4</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 2px; text-align: right; width: 200px">
-                            Считать по отношению к
-                        </td>
-                        <td style="padding: 2px">
-                            <select
-                                    id="towardsValues"
-                                    name="towardsValues"
-                                    class="selectStyle"
-                            >
-                                <option value="towardValue1">сумма по полю</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div style="width: 60%; display: inline-block">
-                <table
-                        style="
-                border: 0px;
-                table-layout: fixed;
-                border-collapse: collapse;
-              "
-                >
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
-                            Фильтрация:
-                        </td>
-                        <td class="col2" style="padding: 2px"></td>
-                    </tr>
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
+                        <td class="col3" style="padding: 2px; text-align: right">
                             по дате:
                         </td>
-                        <td class="col2" style="padding: 2px">
+                        <td class="col4" style="padding: 2px">
                             <select id="fieldsDate" name="fieldsDate" class="selectStyle">
                                 <option value="fieldDate1">поле 1</option>
                                 <option value="fieldDate2">поле 2</option>
@@ -135,9 +93,24 @@
                     </tr>
                     <tr>
                         <td class="col1" style="padding: 2px; text-align: right">
-                            по значению:
+                            Поле для пересчета:
                         </td>
                         <td class="col2" style="padding: 2px">
+                            <select
+                                    id="fieldsRecount"
+                                    name="fieldsRecount"
+                                    class="selectStyle"
+                            >
+                                <option value="fieldRecount1">поле 1</option>
+                                <option value="fieldRecount2">поле 2</option>
+                                <option value="fieldRecount3">поле 3</option>
+                                <option value="fieldRecount4">поле 4</option>
+                            </select>
+                        </td>
+                        <td class="col3" style="padding: 2px; text-align: right">
+                            по значению:
+                        </td>
+                        <td class="col4" style="padding: 2px">
                             <select
                                     id="valuesFilterFields"
                                     name="valuesFilterFields"
@@ -158,9 +131,24 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="col1" style="padding: 2px; text-align: right"></td>
+                        <td
+                                class="col1"
+                                style="padding: 2px; text-align: right; width: 200px"
+                        >
+                            Считать по отношению к
+                        </td>
                         <td class="col2" style="padding: 2px">
-                            <p style="padding-bottom: 5px">
+                            <select
+                                    id="towardsValues"
+                                    name="towardsValues"
+                                    class="selectStyle"
+                            >
+                                <option value="towardValue1">сумма по полю</option>
+                            </select>
+                        </td>
+                        <td class="col3"></td>
+                        <td class="col4" style="padding: 2px">
+                            <p style="padding-bottom: 5px; text-align: right">
                                 <button
                                         class="buttons"
                                         type="button"

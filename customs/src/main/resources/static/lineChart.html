@@ -19,7 +19,7 @@
 <div class="main">
     <div style="height: 40%; position: absolute">
         <div class="parameters">
-            <div style="width: 300px; display: inline-block">
+            <div style="width: 700px; display: inline-block; z-index: 2;">
                 <table
                         style="
                 border: 0px;
@@ -37,12 +37,39 @@
                                 <option value="table2">Таблица 2</option>
                             </select>
                         </td>
+                        <td class="col3" style="padding: 2px; text-align: right">
+                            Показатель по полю:
+                        </td>
+                        <td class="col4" style="padding: 2px">
+                            <select
+                                    id="indicatorFields"
+                                    name="indicatorFields"
+                                    class="selectStyle"
+                            >
+                                <option value="indicatorField1">поле 1</option>
+                                <option value="indicatorField2">поле 2</option>
+                            </select>
+                        </td>
+                        <td class="col5" style="padding: 2px; text-align: right">
+                            Период по полю:
+                        </td>
+                        <td class="col6" style="padding: 2px">
+                            <select
+                                    id="periodFields"
+                                    name="periodFields"
+                                    class="selectStyle"
+                            >
+                                <option value="periodField1">поле 1</option>
+                                <option value="periodField2">поле 2</option>
+                                <option value="periodField3">поле 3</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
-                        <td style="padding: 2px; text-align: right; width: 200px">
+                        <td class="col1" style="padding: 2px; text-align: right; width: 200px">
                             Список значений по полю:
                         </td>
-                        <td style="padding: 2px">
+                        <td class="col2" style="padding: 2px">
                             <select
                                     id="fieldsValues"
                                     name="fieldsValues"
@@ -53,6 +80,18 @@
                                 <option value="field3">поле 3</option>
                                 <option value="field4">поле 4</option>
                             </select>
+                        </td>
+                        <td class="col3" style="padding: 2px; text-align: right">
+                            единичный отрезок
+                        </td>
+                        <td class="col4" style="padding: 2px">
+                            <input type="text" id="unitSegment" name="unitSegment" required minlength="1" size="5"/>
+                        </td>
+                        <td class="col5" style="padding: 2px; text-align: right">
+                            от
+                        </td>
+                        <td class="col6" style="padding: 2px">
+                            <input type="text" id="periodFrom" name="periodFrom" required minlength="10" maxlength="10" size="10" placeholder="YYYY-MM-DD"/>до<input type="text" id="periodTo" name="periodTo" required minlength="10" maxlength="10" size="10" placeholder="YYYY-MM-DD"/>
                         </td>
                     </tr>
                     <tr>
@@ -70,101 +109,16 @@
                                 <option value="filter3">поле 3</option>
                             </select>
                         </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 2px; text-align: right; width: 200px">
-                            значение для фильтрации
-                        </td>
-                        <td style="padding: 2px">
-                            <select
-                                    id="filterValues"
-                                    name="filterValues"
-                                    class="selectStyle"
-                            >
-                                <option value="filterValue1">значение 1</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div style="width: 300px; display: inline-block">
-                <table
-                        style="
-                border: 0px;
-                table-layout: fixed;
-                border-collapse: collapse;
-              "
-                >
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
-                            Показатель по полю:
-                        </td>
-                        <td class="col2" style="padding: 2px">
-                            <select
-                                    id="indicatorFields"
-                                    name="indicatorFields"
-                                    class="selectStyle"
-                            >
-                                <option value="indicatorField1">поле 1</option>
-                                <option value="indicatorField2">поле 2</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
-                            единичный отрезок
-                        </td>
-                        <td class="col2" style="padding: 2px">
-                            <input type="text" id="unitSegment" name="unitSegment" required minlength="1" size="5"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
+                        <td class="col3" style="padding: 2px; text-align: right">
                             система измерения
                         </td>
-                        <td class="col2" style="padding: 2px">
+                        <td class="col4" style="padding: 2px">
                             <input type="text" id="measurementSystem" name="measurementSystem" required minlength="1" size="5"/>
                         </td>
-                    </tr>
-                </table>
-            </div>
-            <div style="width: 300px; display: inline-block">
-                <table
-                        style="
-                border: 0px;
-                table-layout: fixed;
-                border-collapse: collapse;
-              "
-                >
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
-                            Период по полю:
-                        </td>
-                        <td class="col2" style="padding: 2px">
-                            <select
-                                    id="periodFields"
-                                    name="periodFields"
-                                    class="selectStyle"
-                            >
-                                <option value="periodField1">поле 1</option>
-                                <option value="periodField2">поле 2</option>
-                                <option value="periodField3">поле 3</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col1" style="padding: 2px; text-align: right">
-                            от
-                        </td>
-                        <td class="col2" style="padding: 2px">
-                            <input type="text" id="periodFrom" name="periodFrom" required minlength="10" maxlength="10" size="10" placeholder="YYYY-MM-DD"/>до<input type="text" id="periodTo" name="periodTo" required minlength="10" maxlength="10" size="10" placeholder="YYYY-MM-DD"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 2px; text-align: right; width: 200px">
+                        <td class="col5" style="padding: 2px; text-align: right; width: 200px">
                             единичный отрезок
                         </td>
-                        <td style="padding: 2px">
+                        <td class="col6" style="padding: 2px">
                             <select
                                     id="PeriodUnitSegments"
                                     name="PeriodUnitSegments"
@@ -177,9 +131,23 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="col1" style="padding: 2px; text-align: right"></td>
+                        <td class="col1" style="padding: 2px; text-align: right; width: 200px">
+                            значение для фильтрации
+                        </td>
                         <td class="col2" style="padding: 2px">
-                            <p style="padding-bottom: 5px">
+                            <select
+                                    id="filterValues"
+                                    name="filterValues"
+                                    class="selectStyle"
+                            >
+                                <option value="filterValue1">значение 1</option>
+                            </select>
+                        </td>
+                        <td class="col3"></td>
+                        <td class="col4"></td>
+                        <td class="col5"></td>
+                        <td class="col6" style="padding: 2px">
+                            <p style="padding-bottom: 5px; text-align: center">
                                 <button
                                         class="buttons"
                                         type="button"
