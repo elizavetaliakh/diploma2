@@ -9,18 +9,18 @@
 </head>
 <body>
 <div class="divUpper">
-    <label for="tables" style="padding-right: 5px">Выберите таблицу:</label>
-    <select id="tables" name="tables" class="selectStyle">
-        <option value="table1">Таблица 1</option>
-        <option value="table2">Таблица 2</option>
+    <label for="databases" style="padding-right: 5px">Выберите базу данных:</label>
+    <select id="databases" name="databases" class="selectStyle">
+        <option value="database1">Таблица 1</option>
+        <option value="database2">Таблица 2</option>
     </select>
 </div>
 <div class="sidenav">
-    <a href="#">Структура БД</a>
-    <a href="#">Круговая диаграмма</a>
-    <a href="#">Столбчатая диаграмма</a>
-    <a href="#">Линейная диаграмма</a>
-    <a href="#">Конструктор отчетов</a>
+    <a href="dbstructure.html">Структура БД</a>
+    <a href="pieChart.html">Круговая диаграмма</a>
+    <a href="barChart.html">Столбчатая диаграмма</a>
+    <a href="lineChart.html">Линейная диаграмма</a>
+    <a href="reports.html">Конструктор отчетов</a>
 </div>
 <div class="main">
     <table class="tableOutput">
@@ -58,7 +58,7 @@
                     <td style="padding: 2px;">DISTINCT</td>
                     <td style="padding: 2px;">
                         <label class="switch">
-                            <input type="checkbox">
+                            <input type="checkbox" id="distinct">
                             <span class="slider round"></span>
                         </label>
                     </td>
@@ -75,7 +75,7 @@
                     <td style="padding: 2px;">AND</td>
                     <td style="padding: 2px;">
                         <label class="switch">
-                            <input type="checkbox">
+                            <input type="checkbox" id="and">
                             <span class="slider round"></span>
                         </label>
                     </td>
@@ -89,15 +89,15 @@
                     <td style="padding: 2px;"><input type="text" id="orderBy" name="orderBy" required minlength="1" size="20"/></td>
                 </tr>
             </table>
-            <p style="padding-bottom: 5px;"><button class="buttons" type="button" id="makeQuery" name="makeQuery" width="15px" height="10px">Сформировать</button></p>
-            <textarea id="sqlText" name="sqlText"
-                      style="font-size:16px;
+            <p style="padding-bottom: 5px;">
+                <button class="buttons" type="button" id="makeQuery" name="makeQuery" width="15px" height="10px" onclick="makeQuery()">Сформировать</button>
+            </p>
+            <textarea id="sqlText" name="sqlText" style="font-size:16px;
             height: 150px;
             width: 98%;
-            resize: none;" >
-          </textarea>
+            resize: none;" ></textarea>
             <div style="display: flex; padding-left: 65%; padding-top: 5px;">
-                <div style="display: inline-block; padding-right: 5px;"><button class="buttons" type="button" id="saveQuery" name="saveQuery" width="15px" height="10px">Сохранить</button></div>
+                <div style="display: inline-block; padding-right: 5px;"><button class="buttons" type="button" id="saveQuery" name="saveQuery" width="15px" height="10px" onclick="saveQuery()">Сохранить</button></div>
                 <div style="display: inline-block;"><button class="buttons" type="button" id="executeQuery" name="executeQuery" width="15px" height="10px">Выполнить</button></div>
             </div>
         </div>
@@ -107,10 +107,44 @@
                       style="font-size:16px;
             height: 375px;
             width: 98%;
-            resize: none;" >
-          </textarea>
+            resize: none;" ></textarea>
         </div>
     </div>
 </div>
+<script>
+    function makeQuery() {
+    document.getElementById("sqlText").value='';
+        var database = document.getElementById("databases").value;
+        var selectMargin = document.getElementById("select").value;
+        var distinctSwitch = document.getElementById("distinct").checked;
+        var distinctTrue;
+        if(distinctSwitch==true) { distinctTrue = ' DISTINCT'; }
+        else { distinctTrue = ''; }
+        var fromMargin = document.getElementById("from").value;
+        var whereMargin = document.getElementById("where").value;
+        var andSwitch = document.getElementById("and").checked;
+        var andTrue;
+        if(andSwitch==true) { andTrue = ' AND'; }
+        else { andTrue = ''; }
+        var groupByMargin = document.getElementById("groupBy").value;
+        var groupByText = '';
+        if(groupByMargin!='') { groupByText = ' GROUP BY ' + groupByMargin; }
+        var orderByMargin = document.getElementById("orderBy").value;
+        var orderByText = '';
+        if(orderByMargin!='') { orderByText = ' ORDER BY ' + orderByMargin; }
+
+        if(selectMargin=='' || fromMargin=='' || whereMargin=='') { alert('Заполните обязательные поля!'); }
+        else {
+            var query = 'SELECT ' + selectMargin + distinctTrue + ' FROM ' + fromMargin + ' WHERE ' + whereMargin +
+                andTrue + groupByText + orderByText + ';'; }
+
+        document.getElementById("sqlText").value=(query);
+    }
+
+    function saveQuery() {
+        var sqlText = document.getElementById("sqlText").value;
+        if(sqlText != '') { document.getElementById("sqlHistory").value += sqlText + '\n'; }
+    }
+</script>
 </body>
 </html>

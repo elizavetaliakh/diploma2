@@ -29,15 +29,21 @@
         <table>
             <tr>
                 <td style="text-align: right">Логин</td>
-                <td><input style="margin-left: 5px; border-radius: 5px" /></td>
+                <td><input style="margin-left: 5px; border-radius: 5px" id="loginInput"/></td>
             </tr>
             <tr>
                 <td style="text-align: right">Пароль</td>
-                <td><input style="margin-left: 5px; border-radius: 5px" /></td>
+                <td><input style="margin-left: 5px; border-radius: 5px" id="passwordInput"/></td>
             </tr>
         </table>
-        <button name="confirmLogin" class="buttonLogin">Войти</button>
+        <button name="confirmLogin" class="buttonLogin" onclick="handleData()">Войти</button>
     </center>
 </div>
+<script>
+    function handleData() {
+        var login = document.getElementById("loginInput").value;
+        var password = document.getElementById("passwordInput").value;
+    }
+</script>
 </body>
 </html>
