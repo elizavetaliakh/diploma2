@@ -1,12 +1,15 @@
 package com.diploma.customs.service;
 
-import com.diploma.customs.model.User;
+import com.diploma.customs.dto.UserDto;
 
 import java.util.List;
 
 public interface UserService {
-    User getById(Long id);
-    void save(User user);
+    UserDto getById(Long id);
+
+    UserDto save(UserDto user);
+
     void delete(Long id);
-    List<User> getAll();
+
+    List<UserDto> getAll();
 }
