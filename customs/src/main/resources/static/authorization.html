@@ -37,13 +37,40 @@
             </tr>
         </table>
         <button name="confirmLogin" class="buttonLogin" onclick="handleData()">Войти</button>
+        <button name="confirmRegistration" class="buttonRegistration" onclick="registrateUser()">Зарегистрироваться</button>
     </center>
 </div>
 <script>
     function handleData() {
         var login = document.getElementById("loginInput").value;
         var password = document.getElementById("passwordInput").value;
+
+    $.ajax({
+        url: '/api/v1/users/get/{id}',
+        method: 'get',
+        dataType: 'html',
+        data: {text: 'Текст'},     /* Параметры передаваемые в запросе. */
+        success: function(data){   /* функция которая будет выполнена после успешного запроса.  */
+		alert(data);            /* В переменной data содержится ответ от index.php. */
+	}
+});
     }
+    function registrateUser() {
+        $.ajax({
+           type: 'POST',
+           url: '/api/v1/users/save',
+           contentType: 'application/json',
+           data: JSON.stringify(data),
+           success: function (response) {
+               console.log('Пользователь сохранен в бд:', response);
+               alert('Пользователь сохранен в бд.');
+           },
+           error: function (error) {
+               console.error('ошибка в сохранении пользователя в бд:', error);
+               alert('ошибка в сохранении пользователя в бд');
+           }
+       });
+}
 </script>
 </body>
 </html>

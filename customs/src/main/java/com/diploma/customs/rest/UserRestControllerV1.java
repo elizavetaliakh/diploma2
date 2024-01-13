@@ -2,6 +2,7 @@ package com.diploma.customs.rest;
 
 import com.diploma.customs.model.User;
 import com.diploma.customs.service.UserService;
+import com.diploma.customs.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/users/")
 public class UserRestControllerV1 {
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @GetMapping("get/{id}")
     public ResponseEntity<User> getUser(@PathVariable("id") Long userId){
@@ -53,7 +54,6 @@ public class UserRestControllerV1 {
     }
 
     @GetMapping("all")
-    @RequestMapping(value = "all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = this.userService.getAll();
         if(users.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);

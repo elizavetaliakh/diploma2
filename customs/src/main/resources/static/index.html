@@ -102,37 +102,10 @@
     <div id="app">
         <users-list :users="users"/>
     </div><hr/>
-    <!-- <div id = "databinding" style="width: auto;">
-        <h1>User Details</h1>
-        <span>User role</span>
-        <input type = "text" placeholder = "Enter user role" v-model = "userRole"/><br>
-        <span>User name</span>
-        <input type = "text" placeholder = "Enter user name" v-model = "userName"/><br>
-        <span>User password</span>
-        <input type = "text" placeholder = "Enter user password" v-model = "userPassword"/><br>
-        <span>Registration date</span>
-        <input type = "text" placeholder = "Enter registration date" v-model = "registrationDate"/><br>
-        <button v-on:click = "showdata" v-bind:style = "styleobj">Add</button>
-        <br/>
-        <br/>
-        <usercomponent
-           v-for = "(item, index) in custdet"
-           v-bind:item = "item"
-           v-bind:index = "index"
-           v-bind:itr = "item"
-           v-bind:key = "item.userName"
-           v-on:removeelement = "custdet.splice(index, 1)">
-        </usercomponent>
-     </div>
-     <div>      
-        <button @click="getUsers" v-bind:style = "styleobj">Show all</button>
-        <div v-for="user in users" :key="user.id">
-            <p>{{ user.id }} - {{ user.userName }} - {{ user.userRole }} - {{ user.userPassword }} - {{ user.registrationDate }}</p>
-        </div>
-     </div> -->
      <script src="https://unpkg.com/vue@2.7.14/dist/vue.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
      <script src = "app.js"></script>
 </body>
 </html>
+
