@@ -1,3 +1,48 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8" />-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge" />-->
+<!--    <title>Log in</title>-->
+<!--    <link rel="stylesheet" href="authorizationStyles.css">-->
+<!--    <script src="app.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="divUpper"></div>-->
+<!--<div-->
+<!--        class="textStyle"-->
+<!--        style="-->
+<!--        position: absolute;-->
+<!--        top: 40%;-->
+<!--        left: 40%;-->
+<!--        margin: -100px 0 0 -100px;-->
+<!--        background-color: rgb(188, 215, 162);-->
+<!--        padding-left: 10%;-->
+<!--        padding-right: 10%;-->
+<!--        padding-top: 7%;-->
+<!--        padding-bottom: 7%;-->
+<!--        border-radius: 25px;-->
+<!--      "-->
+<!--&gt;-->
+<!--    <center>-->
+<!--        <h3 style="margin-bottom: 15px">АВТОРИЗАЦИЯ</h3>-->
+<!--        <table id="tableLogin">-->
+<!--            <tr>-->
+<!--                <td style="text-align: right">Логин</td>-->
+<!--                <td><input style="margin-left: 5px; border-radius: 5px" id="loginInput"/></td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td style="text-align: right">Пароль</td>-->
+<!--                <td><input style="margin-left: 5px; border-radius: 5px" id="passwordInput"/></td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--        <button name="confirmLogin" class="buttonLogin" style="width: 120px;" onclick="handleData()">Войти</button>-->
+<!--        <button name="confirmRegistration" class="buttonLogin" style="width: 180px;" onclick="registrateUser()">Зарегистрироваться</button>-->
+<!--    </center>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +50,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Log in</title>
-    <link rel="stylesheet" href="authorizationStyles.css" />
+    <link rel="stylesheet" href="authorizationStyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
 <div class="divUpper"></div>
@@ -26,7 +74,7 @@
 >
     <center>
         <h3 style="margin-bottom: 15px">АВТОРИЗАЦИЯ</h3>
-        <table>
+        <table id="tableLogin">
             <tr>
                 <td style="text-align: right">Логин</td>
                 <td><input style="margin-left: 5px; border-radius: 5px" id="loginInput"/></td>
@@ -36,41 +84,9 @@
                 <td><input style="margin-left: 5px; border-radius: 5px" id="passwordInput"/></td>
             </tr>
         </table>
-        <button name="confirmLogin" class="buttonLogin" onclick="handleData()">Войти</button>
-        <button name="confirmRegistration" class="buttonRegistration" onclick="registrateUser()">Зарегистрироваться</button>
+        <button name="confirmLogin" class="buttonLogin" style="width: 120px;" onclick="handleData()">Войти</button>
+        <button name="confirmRegistration" class="buttonLogin" style="width: 180px;" onclick="registrateUser()">Зарегистрироваться</button>
     </center>
 </div>
-<script>
-    function handleData() {
-        var login = document.getElementById("loginInput").value;
-        var password = document.getElementById("passwordInput").value;
-
-    $.ajax({
-        url: '/api/v1/users/get/{id}',
-        method: 'get',
-        dataType: 'html',
-        data: {text: 'Текст'},     /* Параметры передаваемые в запросе. */
-        success: function(data){   /* функция которая будет выполнена после успешного запроса.  */
-		alert(data);            /* В переменной data содержится ответ от index.php. */
-	}
-});
-    }
-    function registrateUser() {
-        $.ajax({
-           type: 'POST',
-           url: '/api/v1/users/save',
-           contentType: 'application/json',
-           data: JSON.stringify(data),
-           success: function (response) {
-               console.log('Пользователь сохранен в бд:', response);
-               alert('Пользователь сохранен в бд.');
-           },
-           error: function (error) {
-               console.error('ошибка в сохранении пользователя в бд:', error);
-               alert('ошибка в сохранении пользователя в бд');
-           }
-       });
-}
-</script>
 </body>
 </html>

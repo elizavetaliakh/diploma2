@@ -15,10 +15,9 @@ h1 {
 .textStyle {
   font-family: "Comfortaa", cursive;
 }
-.buttonLogin {
+button {
   margin-top: 15px;
   padding: 5px;
-  width: 120px;
   font-family: "Comfortaa", cursive;
   border-radius: 5px;
   background-color: rgb(153, 185, 97);

@@ -3,18 +3,19 @@ package com.diploma.customs.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @Table(name = "users")
-public class User{
+public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userIdGen")
+    @SequenceGenerator(name = "userIdGen", sequenceName = "users_user_id_seq", allocationSize = 1)
     @Column(name = "user_id")
     private Long id;
 
@@ -28,7 +29,7 @@ public class User{
     private String userPassword;
 
     @Column(name = "registration_date")
-    private String registrationDate;
+    private LocalDate registrationDate;
 
     @Override
     public boolean equals(Object o) {

@@ -1,2 +1,1 @@
-insert into users values(1, 'ROLE_USER', 'test1', '12345', current_date);
-insert into users values(2, 'ROLE_ADMIN', 'test2', '54321', current_date);
+insert into users (user_role, user_name, user_password, registration_date) values ('user', 'New_user', '45433gg', '2024-01-11');
