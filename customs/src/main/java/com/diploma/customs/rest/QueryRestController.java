@@ -1,19 +1,16 @@
 package com.diploma.customs.rest;
 
 import com.diploma.customs.dto.QueryDto;
-import com.diploma.customs.dto.UserDto;
 import com.diploma.customs.service.QueryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
 @RestController
 @RequestMapping("/api/queries/")
 @RequiredArgsConstructor

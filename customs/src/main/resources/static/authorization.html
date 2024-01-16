@@ -46,14 +46,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Log in</title>
-    <link rel="stylesheet" href="authorizationStyles.css">
+    <link rel="stylesheet" href="css/authorizationStyles.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
 </head>
 <body>
 <div class="divUpper"></div>
@@ -72,21 +72,27 @@
         border-radius: 25px;
       "
 >
-    <center>
-        <h3 style="margin-bottom: 15px">АВТОРИЗАЦИЯ</h3>
+    <form
+            class="form-horizontal"
+            method="post"
+            role="form"
+            th:action="@{/login}">
+        <h3 style="margin-bottom: 15px; text-align: center">АВТОРИЗАЦИЯ</h3>
         <table id="tableLogin">
             <tr>
                 <td style="text-align: right">Логин</td>
-                <td><input style="margin-left: 5px; border-radius: 5px" id="loginInput"/></td>
+                <td><input style="margin-left: 5px; border-radius: 5px" id="loginInput" name="username"/></td>
             </tr>
             <tr>
                 <td style="text-align: right">Пароль</td>
-                <td><input style="margin-left: 5px; border-radius: 5px" id="passwordInput"/></td>
+                <td><input style="margin-left: 5px; border-radius: 5px" id="passwordInput" name="password"/></td>
             </tr>
         </table>
-        <button name="confirmLogin" class="buttonLogin" style="width: 120px;" onclick="handleData()">Войти</button>
-        <button name="confirmRegistration" class="buttonLogin" style="width: 180px;" onclick="registrateUser()">Зарегистрироваться</button>
-    </center>
+        <button name="confirmLogin" class="buttonLogin" style="width: 120px;" type="submit">Войти</button>
+        <button name="confirmRegistration" class="buttonLogin" style="width: 180px;" onclick="registrateUser()"
+                type="button">Зарегистрироваться
+        </button>
+    </form>
 </div>
 </body>
 </html>

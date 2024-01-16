@@ -39,7 +39,7 @@ function handleData() {
     $.ajax({
         url: '/api/v1/users/login/{log}/{password}',
         method: 'get',
-        dataType: 'json',
+        dataType: 'application/json',
         data: {
             "userName": login,
             "userPassword": password
@@ -62,7 +62,7 @@ function handleData() {
     $.ajax({
         url: '/api/v1/users/login/' + encodeURIComponent(login) + '/' + encodeURIComponent(password),
         method: 'get',
-        dataType: 'json',
+        dataType: 'application/json',
         success: function (data) {
             alert("login");
         }
@@ -70,13 +70,16 @@ function handleData() {
 }
 
 function registrateUser() {
-    var login = document.getElementById("loginInput").value;
-    var password = document.getElementById("passwordInput").value;
+    let login = $('#loginInput').val();
+    let password = $('#passwordInput').val();
+    console.log('login = ' + login + ' password = ' + password);
     $.ajax({
         type: 'POST',
         url: '/api/v1/users/save',
-        contentType: 'json',
+        contentType: 'application/json',
         data: JSON.stringify({
+            "userRole": 'ROLE_USER',
+            "registrationDate": new Date(),
             "userName": login,
             "userPassword": password
         }),
@@ -95,7 +98,7 @@ function loadDbStructure() {
     $.ajax({
             url: '/api/queries/allById/3',
             method: 'get',
-            dataType: 'json',
+            dataType: 'application/json',
             data: {"userId": 3},
             success: function (data) {
                 document.getElementById("sqlHistory").value += data;
@@ -139,7 +142,7 @@ function makeQuery() {
              $.ajax({
                      type: 'POST',
                      url: '/api/queries/save',
-                     contentType: 'json',
+                     contentType: 'application/json',
                      data: JSON.stringify({
                         "userId": 1,
                         "queryDefinition": sqlText

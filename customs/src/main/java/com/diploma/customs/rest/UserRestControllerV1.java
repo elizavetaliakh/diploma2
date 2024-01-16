@@ -6,13 +6,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
+import java.util.Objects;
 
-@Controller
 @RestController
 @RequestMapping("/api/v1/users/")
 @RequiredArgsConstructor
@@ -66,11 +65,12 @@ public class UserRestControllerV1 {
     public ResponseEntity<UserDto> loginUser(@PathVariable("log") String userName, @PathVariable("password") String userPassword) {
         log.info("loginUser");
         if (userName == null || userPassword == null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        for (int i = 2; i < userService.getAll().size(); i++) {
-            UserDto user = userService.getById(Integer.toUnsignedLong(i));
-            if (user.getUserName() == userName && user.getUserPassword() == userPassword) return new ResponseEntity<>(user, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        UserDto user = userService.getByUserName(userName);
+        if (user != null && Objects.equals(user.getUserPassword(), userPassword))
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        else if (user != null && !Objects.equals(user.getUserPassword(), userPassword))
+            return new ResponseEntity<>(user, HttpStatus.FORBIDDEN);
+        else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @GetMapping(value = "table")
