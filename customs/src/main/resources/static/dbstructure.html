@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Database structure</title>
     <link rel="stylesheet" href="dbstyles.css" />
+    <script src="app.js"></script>
 </head>
-<body>
+<body onload="loadDbStructure()">
 <div class="divUpper">
-    <label for="databases" style="padding-right: 5px">Выберите базу данных:</label>
+    <label for="databases" style="padding-right: 5px">Выберите таблицу:</label>
     <select id="databases" name="databases" class="selectStyle">
         <option value="database1">Таблица 1</option>
         <option value="database2">Таблица 2</option>
@@ -98,7 +99,7 @@
             resize: none;" ></textarea>
             <div style="display: flex; padding-left: 65%; padding-top: 5px;">
                 <div style="display: inline-block; padding-right: 5px;"><button class="buttons" type="button" id="saveQuery" name="saveQuery" width="15px" height="10px" onclick="saveQuery()">Сохранить</button></div>
-                <div style="display: inline-block;"><button class="buttons" type="button" id="executeQuery" name="executeQuery" width="15px" height="10px">Выполнить</button></div>
+                <div style="display: inline-block;"><button class="buttons" type="button" id="executeQuery" name="executeQuery" width="15px" height="10px" onclick="executeQuery()">Выполнить</button></div>
             </div>
         </div>
         <div style="width: 50%; display: inline-block;">
@@ -111,40 +112,5 @@
         </div>
     </div>
 </div>
-<script>
-    function makeQuery() {
-    document.getElementById("sqlText").value='';
-        var database = document.getElementById("databases").value;
-        var selectMargin = document.getElementById("select").value;
-        var distinctSwitch = document.getElementById("distinct").checked;
-        var distinctTrue;
-        if(distinctSwitch==true) { distinctTrue = ' DISTINCT'; }
-        else { distinctTrue = ''; }
-        var fromMargin = document.getElementById("from").value;
-        var whereMargin = document.getElementById("where").value;
-        var andSwitch = document.getElementById("and").checked;
-        var andTrue;
-        if(andSwitch==true) { andTrue = ' AND'; }
-        else { andTrue = ''; }
-        var groupByMargin = document.getElementById("groupBy").value;
-        var groupByText = '';
-        if(groupByMargin!='') { groupByText = ' GROUP BY ' + groupByMargin; }
-        var orderByMargin = document.getElementById("orderBy").value;
-        var orderByText = '';
-        if(orderByMargin!='') { orderByText = ' ORDER BY ' + orderByMargin; }
-
-        if(selectMargin=='' || fromMargin=='' || whereMargin=='') { alert('Заполните обязательные поля!'); }
-        else {
-            var query = 'SELECT ' + selectMargin + distinctTrue + ' FROM ' + fromMargin + ' WHERE ' + whereMargin +
-                andTrue + groupByText + orderByText + ';'; }
-
-        document.getElementById("sqlText").value=(query);
-    }
-
-    function saveQuery() {
-        var sqlText = document.getElementById("sqlText").value;
-        if(sqlText != '') { document.getElementById("sqlHistory").value += sqlText + '\n'; }
-    }
-</script>
 </body>
 </html>

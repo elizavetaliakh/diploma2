@@ -1,1 +1,1 @@
-insert into users (user_role, user_name, user_password, registration_date) values ('user', 'New_user', '45433gg', '2024-01-11');
+delete from users where user_id > 15;

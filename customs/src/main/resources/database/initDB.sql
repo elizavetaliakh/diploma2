@@ -1,8 +1,8 @@
---create sequence if not exists users_id_seq;
---create sequence if not exists query_id_seq;
+create sequence if not exists users_id_sequence start 1;
+create sequence if not exists query_id_sequence start 1;
 
 CREATE TABLE IF NOT EXISTS users(
-    user_id INTEGER PRIMARY KEY default nextval('users_user_id_seq'),
+    user_id INTEGER PRIMARY KEY default nextval('users_id_seq'),
     user_role VARCHAR(20) NOT NULL,
     user_name VARCHAR(100) NOT NULL,
     user_password VARCHAR(8) NOT NULL,

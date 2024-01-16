@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -54,5 +55,16 @@ public class QueryRestController {
         List<QueryDto> queries = queryService.getAll();
         if (queries.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(queries, HttpStatus.OK);
+    }
+
+    @GetMapping("allById/{userId}")
+    public ResponseEntity<List<QueryDto>> getAllQueriesById(@PathVariable("userId") Long userId) {
+        List<QueryDto> queries = queryService.getAll();
+        List<QueryDto> queriesById = new ArrayList<>();
+        for (QueryDto queryDto : queries) {
+            if (queryDto.getUserId() == userId) queriesById.add(queryDto);
+        }
+        if (queriesById.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(queriesById, HttpStatus.OK);
     }
 }

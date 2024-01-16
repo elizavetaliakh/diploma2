@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Query {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "queryIdGen")
-    @SequenceGenerator(name = "queryIdGen", sequenceName = "query_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "queryIdGen", sequenceName = "query_id_sequence", allocationSize = 1)
     @Column(name = "query_id")
     private Long queryId;
 
