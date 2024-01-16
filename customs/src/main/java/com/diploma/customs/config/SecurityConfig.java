@@ -41,7 +41,7 @@ public class SecurityConfig {
                                 "/login",
                                 "/logout").permitAll()
                         .requestMatchers(
-                                "/users/*"
+                                "/index/**"
                         ).hasAnyAuthority("ROLE_USER")
                         .anyRequest().authenticated()
                 )
