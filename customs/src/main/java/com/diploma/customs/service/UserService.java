@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface UserService {
     UserDto getByUserName(String login);
+
     UserDto getById(Long id);
 
     UserDto save(UserDto user);
