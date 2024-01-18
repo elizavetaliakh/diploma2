@@ -11,11 +11,13 @@ import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.hibernate.query.Query;
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,32 +53,6 @@ public class OperationServiceImpl implements OperationService {
         return operationMapper.toListDto(operationRepository.findAll());
     }
 
-//    @Override
-//    @Transactional(readOnly = true)
-//    public int getByDateQuery(String table, String dateField, LocalDate dateFrom, LocalDate dateTo, String pieField, String sliceValue) {
-//        return operationRepository.findByDateQuery(table, dateField, dateFrom, dateTo, pieField, sliceValue);
-//    }
-//
-//    @Override
-//    @Transactional(readOnly = true)
-//    public int getByConditionQuery(String table, String conditionField, String condition, String pieField, String sliceValue) {
-//        return operationRepository.findByConditionQuery(table, conditionField, condition, pieField, sliceValue);
-//    }
-//
-//    @Override
-//    @Transactional(readOnly = true)
-//    public int getByDateAndConditionQuery(String table, String dateField, LocalDate dateFrom, LocalDate dateTo,
-//                                   String conditionField, String condition, String pieField, String sliceValue) {
-//        return operationRepository.findByDateAndConditionQuery(table, dateField, dateFrom, dateTo,
-//                conditionField, condition, pieField, sliceValue);
-//    }
-//
-//    @Override
-//    @Transactional(readOnly = true)
-//    public List<String> getValues(String field, String table) {
-//        return operationRepository.values(field, table);
-//    }
-
     @Override
     @Transactional(readOnly = true)
     public List<OperationDto> selectOperations() {
@@ -105,5 +81,27 @@ public class OperationServiceImpl implements OperationService {
     @Transactional(readOnly = true)
     public List<String> selectColumns(String catalog, String table) {
         return operationRepository.selectColumns(catalog, table).stream().toList();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public String getColumnDataType(String catalog, String table, String column) {
+        return operationRepository.getColumnDataType(catalog, table, column);
+    }
+
+    private Session currentSession() {
+        return entityManager.unwrap(Session.class);
+    }
+    @Override
+    @Transactional(readOnly = true)
+    public List<OperationDto> ownQueryOperations(String query) {
+        try (Session session = currentSession()) {
+            Query<Operation> q = session.createNativeQuery(query, Operation.class);
+            List<Operation> result = q.list();
+            return (List<OperationDto>) operationMapper.toListDto(result);
+        } catch (Exception exception) {
+            log.error(exception.getMessage(), exception);
+        }
+        return null;
     }
 }

@@ -124,4 +124,18 @@ public class OperationRestController {
         if (list.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
+
+    @GetMapping("getcolumndatatype")
+    public ResponseEntity<String> getColumnDataType(String catalog, String table, String column) {
+        String dataType = operationService.getColumnDataType(catalog, table, column);
+        if (dataType == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(dataType, HttpStatus.OK);
+    }
+
+    @GetMapping("ownquery")
+    public ResponseEntity<List<OperationDto>> getOwnQueryOperations(String query) {
+        List<OperationDto> list = operationService.ownQueryOperations(query);
+        if (list.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
 }

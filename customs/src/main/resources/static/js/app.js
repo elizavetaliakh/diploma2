@@ -112,12 +112,22 @@ function saveQuery() {
 
 function executeQuery() {
     let sqlText = $('#sqlText').val();
-    console.log('sql query text = ' + sqlText + ' user id = ' + userIdOutput);
+//    $.ajax({
+//        url: '/api/operations/setsqlquery',
+//        method: 'get',
+//        dataType: 'application/json',
+//        //data: {"query": sqlText},
+//        success: function (data) {
+//            console.log("Success" + data);
+//        }
+//    });
+    let q = "SELECT o FROM Operation o";
+    console.log('sql query text = ' + q + ' user id = ' + userIdOutput);
     $.ajax({
-        url: '/api/operations/setsqlquery',
+        url: '/api/operations/ownquery',
         method: 'get',
         dataType: 'application/json',
-        //data: {"query": sqlText},
+        data: {"query": q},
         success: function (data) {
             console.log("Success" + data);
         }
@@ -148,26 +158,50 @@ function drawTable() {
             localStorage.setItem('rows', data.toString());
         }
     });
-    $.ajax({
-        url: '/api/operations/getcolumnsnames',
-        method: 'get',
-        dataType: 'application/json',
-        data: {"catalog": catalog, "table": tableValue},
-        success: function (data) {
-            console.log("Columns names: " + data);
-        }
-    });
 
     var columns = Number(localStorage.getItem('cols'));
     var rows = Number(localStorage.getItem('rows'));
 
-    let table = document.querySelector('#tableDb');
-    for (let i = 0; i < rows + 2; i++) {
-    	let tr = document.createElement('tr');
+    $.ajax({
+        url: '/api/operations/getcolumnsnames',
+        method: 'get',
+        data: {"catalog": catalog, "table": tableValue},
+        success: function (data) {
+            console.log("Columns names: " + data);
+            let i = 0;
+            data.forEach((element) => {
+                localStorage.setItem("col"+i.toString(), element);
+                i+=1;
+                console.log(localStorage.getItem('col'+i.toString()));
+            })
+        }
+    });
+for (let i=0; i<columns; i++) {
+    let colName = localStorage.getItem('col'+i.toString());
+    $.ajax({
+        url: '/api/operations/getcolumndatatype',
+        method: 'get',
+        data: {"catalog": catalog, "table": tableValue, "column": colName},
+        success: function (data) {
+            console.log("Column type " + i + ": " + data);
+            localStorage.setItem("type"+i.toString(), data);
+            console.log(localStorage.getItem('type'+i.toString()));
+        }
+    });
+}
 
-    	for (let i = 0; i < columns; i++) {
+    let table = document.querySelector('#tableDb');
+    for (let i = -2; i < rows; i++) {
+    	let tr = document.createElement('tr');
+    	for (let j = 0; j < columns; j++) {
     		let td = document.createElement('td');
-    		tr.appendChild(td);
+    		if (i == -2) {
+    		    td.innerHTML = localStorage.getItem('col'+j.toString());
+            }
+            if (i == -1) {
+                td.innerHTML = localStorage.getItem('type'+j.toString());
+            }
+            tr.appendChild(td);
     	}
 
     	table.appendChild(tr);

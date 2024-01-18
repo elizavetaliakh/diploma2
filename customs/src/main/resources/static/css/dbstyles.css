@@ -75,16 +75,14 @@
 .tableOutput {
   font-family: "Comfortaa", cursive;
   font-size: 14px;
-  width: 100%;
   height: fit-content;
-  table-layout: fixed;
   border-collapse: collapse;
   border: 1px solid black;
 }
 .tableOutput tr td {
   border: 1px solid black;
   padding: 2px;
-  width: 120px;
+  width: fit-content;
 }
 
 .queryConstructorDiv {
