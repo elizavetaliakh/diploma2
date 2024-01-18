@@ -84,6 +84,7 @@
 .tableOutput tr td {
   border: 1px solid black;
   padding: 2px;
+  width: 120px;
 }
 
 .queryConstructorDiv {
@@ -156,4 +157,7 @@ input:checked + .slider:before {
   border-radius: 5px;
   border-width: 1px;
   padding: 3px;
+}
+.divTable {
+    margin-left: 285px;
 }

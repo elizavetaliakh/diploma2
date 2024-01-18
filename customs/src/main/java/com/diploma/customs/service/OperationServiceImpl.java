@@ -83,21 +83,27 @@ public class OperationServiceImpl implements OperationService {
         return operationMapper.toListDto(operationRepository.selectOperations());
     }
 
-    private Session currentSession() {
-        return entityManager.unwrap(Session.class);
+    @Override
+    @Transactional(readOnly = true)
+    public List<OperationDto> getOperationsByQuery(String query) {
+        return entityManager.createQuery(query, OperationDto.class).getResultList();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public List<OperationDto> getOperationsByQuery(String query) {
-//        try (Session session = currentSession()) {
-//            Query<OperationDto> q = session.createNativeQuery(query, OperationDto.class);
-//            return q.list();
-//        } catch (Exception exception) {
-//            log.error(exception.getMessage(), exception);
-//        }
-//        return null;
+    public Integer countColumns(String catalog, String table) {
+        return operationRepository.getColumnsNumber(catalog, table);
+    }
 
-        return entityManager.createQuery(query, OperationDto.class).getResultList();
+    @Override
+    @Transactional(readOnly = true)
+    public Integer countRowsOperations() {
+        return operationRepository.getRowNumberOperations();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<String> selectColumns(String catalog, String table) {
+        return operationRepository.selectColumns(catalog, table).stream().toList();
     }
 }

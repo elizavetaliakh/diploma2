@@ -18,6 +18,8 @@ public interface OperationService { ;
 //                                    String conditionField, String condition, String pieField, String sliceValue);
 //    List<String> getValues(String field, String table);
     List<OperationDto> selectOperations();
-
     List<OperationDto> getOperationsByQuery(String query);
+    Integer countColumns(String catalog, String table);
+    Integer countRowsOperations();
+    List<String> selectColumns(String catalog, String table);
 }

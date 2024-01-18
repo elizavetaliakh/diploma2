@@ -5,6 +5,7 @@ import com.diploma.customs.dto.QueryDto;
 import com.diploma.customs.dto.UserDto;
 import com.diploma.customs.model.Operation;
 import com.diploma.customs.service.OperationService;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -99,6 +100,27 @@ public class OperationRestController {
     @GetMapping("setsqlquery")
     public ResponseEntity<List<OperationDto>> getOperationsByQuery() {
         List<OperationDto> list = operationService.getOperationsByQuery("SELECT o FROM Operation o");
+        if (list.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    @GetMapping("getcolumns")
+    public ResponseEntity<Integer> getColumns(String catalog, String table) {
+        int columns = operationService.countColumns(catalog, table);
+        if (columns == 0) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(columns, HttpStatus.OK);
+    }
+
+    @GetMapping("getrows")
+    public ResponseEntity<Integer> getRowsOperations() {
+        int rows = operationService.countRowsOperations();
+        if (rows == 0) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(rows, HttpStatus.OK);
+    }
+
+    @GetMapping("getcolumnsnames")
+    public ResponseEntity<List<String>> getColumnsNames(String catalog, String table) {
+        List<String> list = operationService.selectColumns(catalog, table);
         if (list.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(list, HttpStatus.OK);
     }

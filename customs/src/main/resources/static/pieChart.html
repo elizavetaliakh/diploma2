@@ -34,8 +34,7 @@
                         </td>
                         <td class="col2" style="padding: 2px">
                             <select id="tables" name="tables" class="selectStyle">
-                                <option value="table1">Таблица 1</option>
-                                <option value="table2">Таблица 2</option>
+                                <option value="table1">operations</option>
                             </select>
                         </td>
                         <td class="col3" style="padding: 2px; text-align: right">
@@ -56,10 +55,40 @@
                                     name="fieldsValues"
                                     class="selectStyle"
                             >
-                                <option value="field1">поле 1</option>
-                                <option value="field2">поле 2</option>
-                                <option value="field3">поле 3</option>
-                                <option value="field4">поле 4</option>
+                                <option value="field1">to_mail_message_id</option>
+                                <option value="field2">custom</option>
+                                <option value="field3">pto</option>
+                                <option value="field4">lnp_photography</option>
+                                <option value="field5">lnp_inspection</option>
+                                <option value="field6">lnp_custom</option>
+                                <option value="field7">lnp_warehouse</option>
+                                <option value="field8">good_description</option>
+                                <option value="field9">name_insp</option>
+                                <option value="field10">requirement</option>
+                                <option value="field11">sign_passport</option>
+                                <option value="field12">sign_passport_detail</option>
+                                <option value="field13">sign_auto_release</option>
+                                <option value="field14">sign_risk</option>
+                                <option value="field15">insp_cost</option>
+                                <option value="field16">insp_currency_code</option>
+                                <option value="field17">insp_full_name</option>
+                                <option value="field18">status</option>
+                                <option value="field19">status_text</option>
+                                <option value="field20">sign_medical</option>
+                                <option value="field21">sign_medical_comment</option>
+                                <option value="field22">release_weight</option>
+                                <option value="field23">release_note</option>
+                                <option value="field24">refuse_cause</option>
+                                <option value="field25">refuse_note</option>
+                                <option value="field26">detencion_cause</option>
+                                <option value="field27">detencion_note</option>
+                                <option value="field28">detencion_code</option>
+                                <option value="field29">insp_corrected</option>
+                                <option value="field30">to_send</option>
+                                <option value="field31">sign_risk_detail</option>
+                                <option value="field32">sign_req</option>
+                                <option value="field33">insp_weight_mail</option>
+                                <option value="field34">insp_total_cost_eur</option>
                             </select>
                         </td>
                         <td class="col3" style="padding: 2px; text-align: right">
@@ -67,8 +96,12 @@
                         </td>
                         <td class="col4" style="padding: 2px">
                             <select id="fieldsDate" name="fieldsDate" class="selectStyle">
-                                <option value="fieldDate1">поле 1</option>
-                                <option value="fieldDate2">поле 2</option>
+                                <option value="fieldDate0">-</option>
+                                <option value="fieldDate1">date_photography</option>
+                                <option value="fieldDate2">date_inspection</option>
+                                <option value="fieldDate3">date_custom</option>
+                                <option value="fieldDate4">date_warehouse</option>
+                                <option value="fieldDate5">date_send</option>
                             </select>
                             от<input
                                 type="text"
@@ -102,10 +135,40 @@
                                     name="fieldsRecount"
                                     class="selectStyle"
                             >
-                                <option value="fieldRecount1">поле 1</option>
-                                <option value="fieldRecount2">поле 2</option>
-                                <option value="fieldRecount3">поле 3</option>
-                                <option value="fieldRecount4">поле 4</option>
+                                <option value="fieldRecount1">to_mail_message_id</option>
+                                <option value="fieldRecount2">custom</option>
+                                <option value="fieldRecount3">pto</option>
+                                <option value="fieldRecount4">lnp_photography</option>
+                                <option value="fieldRecount5">lnp_inspection</option>
+                                <option value="fieldRecount6">lnp_custom</option>
+                                <option value="fieldRecount7">lnp_warehouse</option>
+                                <option value="fieldRecount8">good_description</option>
+                                <option value="fieldRecount9">name_insp</option>
+                                <option value="fieldRecount10">requirement</option>
+                                <option value="fieldRecount11">sign_passport</option>
+                                <option value="fieldRecount12">sign_passport_detail</option>
+                                <option value="fieldRecount13">sign_auto_release</option>
+                                <option value="fieldRecount14">sign_risk</option>
+                                <option value="fieldRecount15">insp_cost</option>
+                                <option value="fieldRecount16">insp_currency_code</option>
+                                <option value="fieldRecount17">insp_full_name</option>
+                                <option value="fieldRecount18">status</option>
+                                <option value="fieldRecount19">status_text</option>
+                                <option value="fieldRecount20">sign_medical</option>
+                                <option value="fieldRecount21">sign_medical_comment</option>
+                                <option value="fieldRecount22">release_weight</option>
+                                <option value="fieldRecount23">release_note</option>
+                                <option value="fieldRecount24">refuse_cause</option>
+                                <option value="fieldRecount25">refuse_note</option>
+                                <option value="fieldRecount26">detencion_cause</option>
+                                <option value="fieldRecount27">detencion_note</option>
+                                <option value="fieldRecount28">detencion_code</option>
+                                <option value="fieldRecount29">insp_corrected</option>
+                                <option value="fieldRecount30">to_send</option>
+                                <option value="fieldRecount31">sign_risk_detail</option>
+                                <option value="fieldRecount32">sign_req</option>
+                                <option value="fieldRecount33">insp_weight_mail</option>
+                                <option value="fieldRecount34">insp_total_cost_eur</option>
                             </select>
                         </td>
                         <td class="col3" style="padding: 2px; text-align: right">
@@ -117,18 +180,46 @@
                                     name="valuesFilterFields"
                                     class="selectStyle"
                             >
-                                <option value="valueFilterField1">поле 1</option>
-                                <option value="valueFilterField2">поле 2</option>
+                                <option value="valueFilterValue1">to_mail_message_id</option>
+                                <option value="valueFilterValue2">custom</option>
+                                <option value="valueFilterValue3">pto</option>
+                                <option value="valueFilterValue4">lnp_photography</option>
+                                <option value="valueFilterValue5">lnp_inspection</option>
+                                <option value="valueFilterValue6">lnp_custom</option>
+                                <option value="valueFilterValue7">lnp_warehouse</option>
+                                <option value="valueFilterValue8">good_description</option>
+                                <option value="valueFilterValue9">name_insp</option>
+                                <option value="valueFilterValue10">requirement</option>
+                                <option value="valueFilterValue11">sign_passport</option>
+                                <option value="valueFilterValue12">sign_passport_detail</option>
+                                <option value="valueFilterValue13">sign_auto_release</option>
+                                <option value="valueFilterValue14">sign_risk</option>
+                                <option value="valueFilterValue15">insp_cost</option>
+                                <option value="valueFilterValue16">insp_currency_code</option>
+                                <option value="valueFilterValue17">insp_full_name</option>
+                                <option value="valueFilterValue18">status</option>
+                                <option value="valueFilterValue19">status_text</option>
+                                <option value="valueFilterValue20">sign_medical</option>
+                                <option value="valueFilterValue21">sign_medical_comment</option>
+                                <option value="valueFilterValue22">release_weight</option>
+                                <option value="valueFilterValue23">release_note</option>
+                                <option value="valueFilterValue24">refuse_cause</option>
+                                <option value="valueFilterValue25">refuse_note</option>
+                                <option value="valueFilterValue26">detencion_cause</option>
+                                <option value="valueFilterValue27">detencion_note</option>
+                                <option value="valueFilterValue28">detencion_code</option>
+                                <option value="valueFilterValue29">insp_corrected</option>
+                                <option value="valueFilterValue30">to_send</option>
+                                <option value="valueFilterValue31">sign_risk_detail</option>
+                                <option value="valueFilterValue32">sign_req</option>
+                                <option value="valueFilterValue33">insp_weight_mail</option>
+                                <option value="valueFilterValue34">insp_total_cost_eur</option>
                             </select>
-                            -<select
+                            -<input
                                 id="valuesFilterValues"
                                 name="valuesFilterValues"
                                 class="selectStyle"
-                        >
-                            <option value="valueFilterValue1">значение поля 1</option>
-                            <option value="valueFilterValue2">значение поля 2</option>
-                            <option value="valueFilterValue3">значение поля 3</option>
-                        </select>
+                                style="width: 200px;"/>
                         </td>
                     </tr>
                     <tr>
@@ -144,6 +235,7 @@
                                         name="makeQuery"
                                         width="15px"
                                         height="10px"
+                                        onclick="showPieDiagram()"
                                 >
                                     Сформировать
                                 </button>
@@ -209,38 +301,6 @@
                 id="container"
                 style="padding-top: 110px; padding-left: 80px"
         ></div>
-        <script>
-
-          anychart.onDocumentReady(function () {
-            // create pie chart with passed data
-            var data = anychart.data.set([
-              ["значение 1", 69.2, 24.2],
-              ["значение 2", 85, 334],
-              ["значение 3", 32.1, 1045],
-              ["значение 4", 8.2, 3038],
-            ]);
-
-            var wealth = data.mapAs({ x: 0, value: 1 });
-
-            var chart = anychart.pie(wealth);
-            chart
-              .labels()
-              .hAlign("center")
-              .position("outside")
-              .format("{%Value} trn.n({%PercentOfCategory}%)");
-            chart
-              .legend()
-              // set legend position and items layout
-              .position("right")
-              .itemsLayout("vertical")
-              .align("center");
-
-            // set container id for the chart
-            chart.container("container");
-            // initiate chart drawing
-            chart.draw();
-          });
-        </script>
     </div>
 </div>
 </body>

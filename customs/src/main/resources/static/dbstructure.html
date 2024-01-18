@@ -7,13 +7,14 @@
     <title>Database structure</title>
     <link rel="stylesheet" href="css/dbstyles.css" />
     <script src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body onload="loadDbStructure()">
 <div class="divUpper">
-    <label for="databases" style="padding-right: 5px">Выберите таблицу:</label>
-    <select id="databases" name="databases" class="selectStyle">
-        <option value="database1">Таблица 1</option>
-        <option value="database2">Таблица 2</option>
+    <label for="tables" style="padding-right: 5px">Выберите таблицу:</label>
+    <select id="tables" name="tables" class="selectStyle" onchange="drawTable()">
+        <option value="none">-</option>
+        <option value="operations">operations</option>
     </select>
 </div>
 <div class="sidenav">
@@ -24,29 +25,6 @@
     <a href="reports.html">Конструктор отчетов</a>
 </div>
 <div class="main">
-    <table class="tableOutput">
-        <tr>
-            <td>Тип данных 1</td>
-            <td>Тип данных 2</td>
-            <td>Тип данных 3</td>
-            <td>Тип данных 4</td>
-            <td>Тип данных 5</td>
-        </tr>
-        <tr style="border-bottom: 3px solid black">
-            <td>Столбец 1</td>
-            <td>Столбец 2</td>
-            <td>Столбец 3</td>
-            <td>Столбец 4</td>
-            <td>Столбец 5</td>
-        </tr>
-        <tr>
-            <td>Значение 1</td>
-            <td>Значение 2</td>
-            <td>Значение 3</td>
-            <td>Значение 4</td>
-            <td>Значение 5</td>
-        </tr>
-    </table>
     <div class="queryConstructorDiv">
         <div style="width: 50%; display: inline-block;">
             <p style="padding-bottom: 5px;">Конструктор SQL запроса:</p>
@@ -111,6 +89,31 @@
             resize: none;" ></textarea>
         </div>
     </div>
+</div>
+<div  style="padding-top: 10px;" class="divTable">
+    <table class="tableOutput" id="tableDb">
+        <!--        <tr>-->
+        <!--            <td>Тип данных 1</td>-->
+        <!--            <td>Тип данных 2</td>-->
+        <!--            <td>Тип данных 3</td>-->
+        <!--            <td>Тип данных 4</td>-->
+        <!--            <td>Тип данных 5</td>-->
+        <!--        </tr>-->
+        <!--        <tr style="border-bottom: 3px solid black">-->
+        <!--            <td>Столбец 1</td>-->
+        <!--            <td>Столбец 2</td>-->
+        <!--            <td>Столбец 3</td>-->
+        <!--            <td>Столбец 4</td>-->
+        <!--            <td>Столбец 5</td>-->
+        <!--        </tr>-->
+        <!--        <tr>-->
+        <!--            <td>Значение 1</td>-->
+        <!--            <td>Значение 2</td>-->
+        <!--            <td>Значение 3</td>-->
+        <!--            <td>Значение 4</td>-->
+        <!--            <td>Значение 5</td>-->
+        <!--        </tr>-->
+    </table>
 </div>
 </body>
 </html>
