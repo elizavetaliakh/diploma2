@@ -96,7 +96,7 @@ public class OperationServiceImpl implements OperationService {
     @Transactional(readOnly = true)
     public List<OperationDto> ownQueryOperations(String query) {
         try (Session session = currentSession()) {
-            Query<Operation> q = session.createNativeQuery(query, Operation.class);
+            Query<Operation> q = session.createQuery(query, Operation.class);
             List<Operation> result = q.list();
             return (List<OperationDto>) operationMapper.toListDto(result);
         } catch (Exception exception) {

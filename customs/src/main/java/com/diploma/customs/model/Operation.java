@@ -19,7 +19,7 @@ public class Operation {
     private Long operationId;
 
     @Column(name = "to_mail_message_id")
-    private int toMailMessageId;
+    private Integer toMailMessageId;
 
     @Column(name = "custom")
     private String custom;
@@ -61,7 +61,7 @@ public class Operation {
     private String requirement;
 
     @Column(name = "sign_passport")
-    private int signPassport;
+    private Integer signPassport;
 
     @Column(name = "sign_passport_detail")
     private String signPassportDetail;
@@ -70,13 +70,13 @@ public class Operation {
     private LocalDate dateSend;
 
     @Column(name = "sign_auto_release")
-    private int signAutoRelease;
+    private Integer signAutoRelease;
 
     @Column(name = "sign_risk")
-    private int signRisk;
+    private Integer signRisk;
 
     @Column(name = "insp_cost")
-    private float inspCost;
+    private Float inspCost;
 
     @Column(name = "insp_currency_code")
     private String inspCurrencyCode;
@@ -91,13 +91,13 @@ public class Operation {
     private String statusText;
 
     @Column(name = "sign_medical")
-    private int signMedical;
+    private Integer signMedical;
 
     @Column(name = "sugn_medical_comment")
     private String signMedicalComment;
 
     @Column(name = "release_weight")
-    private float releaseWeight;
+    private Float releaseWeight;
 
     @Column(name = "release_note")
     private String releaseNote;
@@ -118,20 +118,20 @@ public class Operation {
     private String detencionCode;
 
     @Column(name = "insp_corrected")
-    private int inspCorrected;
+    private Integer inspCorrected;
 
     @Column(name = "to_send")
-    private int toSend;
+    private Integer toSend;
 
     @Column(name = "sign_risk_detail")
     private String signRiskDetail;
 
     @Column(name = "sign_req")
-    private int signReq;
+    private Integer signReq;
 
     @Column(name = "insp_weight_mail")
-    private float inspWeightMail;
+    private Float inspWeightMail;
 
     @Column(name = "insp_total_cost_eur")
-    private float inspTotalCostEur;
+    private Float inspTotalCostEur;
 }
