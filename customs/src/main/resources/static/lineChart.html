@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Line chart</title>
     <link rel="stylesheet" href="css/lineChartStyles.css" />
+    <script src="js/app.js"></script>
 </head>
 <body>
 <div class="divUpper"></div>
@@ -15,6 +16,7 @@
     <a href="barChart.html">Столбчатая диаграмма</a>
     <a href="lineChart.html">Линейная диаграмма</a>
     <a href="reports.html">Конструктор отчетов</a>
+    <a href="dbManipulations.html">Работа с БД</a>
 </div>
 <div class="main">
     <div style="height: 40%; position: absolute">
@@ -155,7 +157,7 @@
                                         name="makeQuery"
                                         width="15px"
                                         height="10px"
-                                >
+                                        onclick="showLineChart()">
                                     Сформировать
                                 </button>
                             </p>
@@ -200,25 +202,6 @@
           ac_add_style(".anychart-embed-samples-bct-line-chart-01{width:600px;height:450px;}");
           })();</script>
             <div id="container" style="padding-top: 130px"></div>
-            <script>
-          anychart.onDocumentReady(function () {
-              var data = [
-                ["2023-08-10", 80],
-                ["2023-09-10", 120],
-                ["2023-10-10", 130],
-                ["2023-11-10", 76],
-                ["2023-12-10", 80]
-              ];
-              var chart = anychart.line();
-              var series = chart.line(data);
-              var xAxis = chart.xAxis();
-              xAxis.title("Период (единичный отрезок)");
-              var yAxis = chart.yAxis();
-              yAxis.title("Показатель (СИ)");
-              chart.container("container");
-              chart.draw();
-          });
-          </script>
         </div>
     </div>
 </div>

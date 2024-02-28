@@ -68,8 +68,6 @@ public class UserRestControllerV1 {
         UserDto user = userService.getByUserName(userName);
         if (user != null && Objects.equals(user.getUserPassword(), userPassword))
             return new ResponseEntity<>(user, HttpStatus.OK);
-        else if (user != null && !Objects.equals(user.getUserPassword(), userPassword))
-            return new ResponseEntity<>(user, HttpStatus.FORBIDDEN);
         else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 

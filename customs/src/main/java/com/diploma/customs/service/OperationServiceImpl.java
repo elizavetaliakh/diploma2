@@ -1,8 +1,6 @@
 package com.diploma.customs.service;
 
 import com.diploma.customs.dto.OperationDto;
-import com.diploma.customs.dto.QueryDto;
-import com.diploma.customs.dto.UserDto;
 import com.diploma.customs.mapper.OperationMapper;
 import com.diploma.customs.model.Operation;
 import com.diploma.customs.repository.OperationRepository;
@@ -11,14 +9,11 @@ import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.hibernate.query.Query;
 
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j

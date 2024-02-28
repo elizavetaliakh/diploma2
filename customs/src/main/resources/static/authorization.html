@@ -36,14 +36,14 @@
         <table id="tableLogin">
             <tr>
                 <td style="text-align: right">Логин</td>
-                <td><input style="margin-left: 5px; border-radius: 5px" id="loginInput" name="username"/></td>
+                <td><input style="margin-left: 5px; border-radius: 5px" id="loginInput" name="username" autocomplete="off"/></td>
             </tr>
             <tr>
                 <td style="text-align: right">Пароль</td>
-                <td><input style="margin-left: 5px; border-radius: 5px" id="passwordInput" name="password"/></td>
+                <td><input style="margin-left: 5px; border-radius: 5px" id="passwordInput" name="password" autocomplete="off"/></td>
             </tr>
         </table>
-        <button name="confirmLogin" class="buttonLogin" style="width: 120px;" type="submit">Войти</button>
+        <button name="confirmLogin" class="buttonLogin" style="width: 120px;" type="submit" onclick="handleData()">Войти</button>
         <button name="confirmRegistration" class="buttonLogin" style="width: 180px;" onclick="registrateUser()"
                 type="button">Зарегистрироваться
         </button>

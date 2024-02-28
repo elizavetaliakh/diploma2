@@ -2,7 +2,6 @@ package com.diploma.customs.service;
 
 
 import com.diploma.customs.dto.OperationDto;
-import com.diploma.customs.model.Operation;
 
 import java.time.LocalDate;
 import java.util.List;

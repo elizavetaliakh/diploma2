@@ -13,8 +13,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OperationDto {
-    private Long id;
-    private int toMailMessageId;
+    private Long operationId;
+    private Integer toMailMessageId;
     private String custom;
     private String pto;
     private String lnpPhotography;
@@ -32,30 +32,30 @@ public class OperationDto {
     private String goodDescription;
     private String nameInsp;
     private String requirement;
-    private int signPassport;
+    private Integer signPassport;
     private String signPassportDetail;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateSend;
-    private int signAutoRelease;
-    private int signRisk;
-    private float inspCost;
+    private Integer signAutoRelease;
+    private Integer signRisk;
+    private Float inspCost;
     private String inspCurrencyCode;
     private String inspFullName;
     private String status;
     private String statusText;
-    private int signMedical;
+    private Integer signMedical;
     private String signMedicalComment;
-    private float releaseWeight;
+    private Float releaseWeight;
     private String releaseNote;
     private String refuseCause;
     private String refuseNote;
     private String detencionCause;
     private String detencionNote;
     private String detencionCode;
-    private int inspCorrected;
-    private int toSend;
+    private Integer inspCorrected;
+    private Integer toSend;
     private String signRiskDetail;
-    private int signReq;
-    private float inspWeightMail;
-    private float inspTotalCostEur;
+    private Integer signReq;
+    private Float inspWeightMail;
+    private Float inspTotalCostEur;
 }

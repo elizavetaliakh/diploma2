@@ -1,20 +1,14 @@
 package com.diploma.customs.rest;
 
 import com.diploma.customs.dto.OperationDto;
-import com.diploma.customs.dto.QueryDto;
-import com.diploma.customs.dto.UserDto;
-import com.diploma.customs.model.Operation;
 import com.diploma.customs.service.OperationService;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -60,35 +54,6 @@ public class OperationRestController {
         if (operations.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(operations, HttpStatus.OK);
     }
-
-//    @GetMapping("datequery")
-//    public int countByDate(@RequestBody String table, @RequestBody String dateField, @RequestBody LocalDate dateFrom,
-//                           @RequestBody LocalDate dateTo, @RequestBody String pieField, @RequestBody String sliceValue) {
-//        int count = operationService.getByDateQuery(table, dateField, dateFrom, dateTo, pieField, sliceValue);
-//        return count;
-//    }
-//
-//    @GetMapping("conditionquery")
-//    public int countByCondition(@RequestBody String table, @RequestBody String conditionField, @RequestBody String condition,
-//                                 @RequestBody String pieField, @RequestBody String sliceValue) {
-//        int count = operationService.getByConditionQuery(table,conditionField,condition,pieField,sliceValue);
-//        return count;
-//    }
-//
-//    @GetMapping("dateconditionquery")
-//    public int countByDateCondition(@RequestBody String table, @RequestBody String dateField, @RequestBody LocalDate dateFrom,
-//                                    @RequestBody LocalDate dateTo, @RequestBody String conditionField, @RequestBody String condition,
-//                                 @RequestBody String pieField, @RequestBody String sliceValue) {
-//        int count = operationService.getByDateAndConditionQuery(table,dateField,dateFrom,dateTo,
-//                conditionField,condition,pieField,sliceValue);
-//        return count;
-//    }
-//
-//    @GetMapping("values")
-//    public List<String> getValues(@RequestBody String field, @RequestBody String table) {
-//        List<String> list = operationService.getValues(field,table);
-//        return list;
-//    }
 
     @GetMapping("sqlquery")
     public ResponseEntity<List<OperationDto>> getSqlResults() {

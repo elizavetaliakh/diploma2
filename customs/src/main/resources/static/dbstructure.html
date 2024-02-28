@@ -23,6 +23,7 @@
     <a href="barChart.html">Столбчатая диаграмма</a>
     <a href="lineChart.html">Линейная диаграмма</a>
     <a href="reports.html">Конструктор отчетов</a>
+    <a href="dbManipulations.html">Работа с БД</a>
 </div>
 <div class="main">
     <div class="queryConstructorDiv">
@@ -31,7 +32,10 @@
             <table style="border: 0px; table-layout: fixed; border-collapse: collapse;">
                 <tr>
                     <td style="padding: 2px;">SELECT</td>
-                    <td style="padding: 2px;"><input type="text" id="select" name="select" required minlength="1" size="20"/></td>
+                    <td style="padding: 2px;">
+                        <input type="text" id="select" name="select" required minlength="1" size="20"
+                               title="Чтобы выбрать поля, отметьте их галочкой в таблице"/>
+                    </td>
                 </tr>
                 <tr>
                     <td style="padding: 2px;">DISTINCT</td>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Работа с БД</title>
+    <link rel="stylesheet" href="css/dbstyles.css" />
+    <script src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<div class="divUpper">
+    <label for="tables" style="padding-right: 5px"
+    >Работа с базой данных</label
+    >
+</div>
+<div class="sidenav">
+    <a href="dbstructure.html">Структура БД</a>
+    <a href="pieChart.html">Круговая диаграмма</a>
+    <a href="barChart.html">Столбчатая диаграмма</a>
+    <a href="lineChart.html">Линейная диаграмма</a>
+    <a href="reports.html">Конструктор отчетов</a>
+    <a href="dbManipulations.html">Работа с БД</a>
+</div>
+<div class="main">
+    <div id="divClients">
+        <h3>1. Таблица clients</h3>
+        <div id="db_add_client">
+            <br />
+            <p>Добавить клиента</p>
+            ФИО клиента: <input id="fullName" /><br />
+            Дата рождения: <input id="dateBirth" /><br />
+            Номер телефона: <input id="phoneNumber" /><br />
+            Электронная почта: <input id="email" /><br />
+            Номер паспорта: <input id="passportNumber" /><br />
+            <button class="buttons" id="buttonAddClient" onclick="addClient()">Добавить</button>
+        </div>
+        <div id="db_change_client">
+            <br />
+            <p>Изменить клиента</p>
+            ID клиента для изменения: <input id="idClientChange" /><br />
+            ФИО клиента: <input id="fullName2" /><br />
+            Дата рождения: <input id="dateBirth2" /><br />
+            Номер телефона: <input id="phoneNumber2" /><br />
+            Электронная почта: <input id="email2" /><br />
+            Номер паспорта: <input id="passportNumber2" /><br />
+            <button class="buttons" id="buttonChangeClient" onclick="changeClient()">Изменить</button>
+        </div>
+        <div id="db_delete_client">
+            <br />
+            <p>Удалить клиента</p>
+            ID клиента для удаления: <input id="idClientDelete" /><br />
+            <button class="buttons" id="buttonDeleteClient" onclick="deleteClient()">Удалить</button>
+        </div>
+        <div id="table_show_clients"></div>
+    </div>
+    <div id="divServices">
+        <br />
+        <h3>2. Таблица services</h3>
+        <div id="db_add_service">
+            <br />
+            <p id="pAdd">Добавить услугу</p>
+            Название услуги: <input id="serviceName" /><br />
+            Цена: <input id="servicePrice" /><br />
+            Вид продуктов: <input id="productType" /><br />
+            Описание услуги: <input id="serviceDescription" /><br />
+            <button class="buttons" id="buttonAddService">Добавить</button>
+        </div>
+        <div id="db_change_service">
+            <br />
+            <p id="pChange">Изменить услугу</p>
+            ID услуги для изменения: <input id="idServiceChange" /><br />
+            Название услуги: <input id="serviceName2" /><br />
+            Цена: <input id="servicePrice2" /><br />
+            Вид продуктов: <input id="productType2" /><br />
+            Описание услуги: <input id="serviceDescription2" /><br />
+            <button class="buttons" id="buttonChangeService">Изменить</button>
+        </div>
+        <div id="db_delete_service">
+            <br />
+            <p id="pDelete">Удалить услугу</p>
+            ID услуги для изменения: <input id="idServiceDelete" /><br />
+            <button class="buttons" id="buttonDeleteService">Удалить</button>
+        </div>
+        <div id="table_show_services"></div>
+    </div>
+    <div id="divOneTimeServices">
+        <br />
+        <h3>3. Таблица onetime_service</h3>
+        <div id="db_add_service">
+            <br />
+            <p id="pAdd">Добавить операцию</p>
+            ID услуги: <input id="serviceId" /><br />
+            ID клиента: <input id="clientId" /><br />
+            Дата принятия: <input id="acceptionDate" /><br />
+            Срок выполнения: <input id="deadlineDate" /><br />
+            ФИО ответственного сотрудника:
+            <input id="responsibleEmployee" /><br />
+            <button class="buttons" id="buttonAddOnetimeService">Добавить</button>
+        </div>
+        <div id="db_change_service">
+            <br />
+            <p id="pChange">Изменить операцию</p>
+            ID услуги для изменения: <input id="idServiceChange" /><br />
+            Название услуги: <input id="serviceName2" /><br />
+            Цена: <input id="servicePrice2" /><br />
+            Вид продуктов: <input id="productType2" /><br />
+            Описание услуги: <input id="serviceDescription2" /><br />
+            <button class="buttons" id="buttonChangeOnetimeService">
+                Изменить
+            </button>
+        </div>
+        <div id="db_delete_service">
+            <br />
+            <p id="pDelete">Удалить операцию</p>
+            ID услуги для изменения: <input id="idServiceDelete" /><br />
+            <button class="buttons" id="buttonDeleteOnetimeService">
+                Удалить
+            </button>
+        </div>
+        <div id="table_show_onetime_service"></div>
+    </div>
+</div>
+</body>
+</html>

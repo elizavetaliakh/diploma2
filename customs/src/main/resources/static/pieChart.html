@@ -16,6 +16,7 @@
     <a href="barChart.html">Столбчатая диаграмма</a>
     <a href="lineChart.html">Линейная диаграмма</a>
     <a href="reports.html">Конструктор отчетов</a>
+    <a href="dbManipulations.html">Работа с БД</a>
 </div>
 <div class="main">
     <div style="height: 40%; position: absolute; bottom: 0">
@@ -34,7 +35,7 @@
                         </td>
                         <td class="col2" style="padding: 2px">
                             <select id="tables" name="tables" class="selectStyle">
-                                <option value="table1">operations</option>
+                                <option value="operations">operations</option>
                             </select>
                         </td>
                         <td class="col3" style="padding: 2px; text-align: right">
@@ -235,8 +236,7 @@
                                         name="makeQuery"
                                         width="15px"
                                         height="10px"
-                                        onclick="showPieDiagram()"
-                                >
+                                        onclick="showPieDiagram()">
                                     Сформировать
                                 </button>
                             </p>
@@ -254,6 +254,9 @@
         <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
         <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
         <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/themes/light_provence.min.js"></script>
+        <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+        <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
         <div
                 id="ac_style_src-pie-and-donut-charts-pie-chart"
                 style="display: none"
@@ -262,45 +265,22 @@
             padding: 0; }
         </div>
         <script>
-          (function () {
-            function ac_add_to_head(el) {
-              var head = document.getElementsByTagName("head")[0];
-              head.insertBefore(el, head.firstChild);
-            }
-            function ac_add_link(url) {
-              var el = document.createElement("link");
-              el.rel = "stylesheet";
-              el.type = "text/css";
-              el.media = "all";
-              el.href = url;
-              ac_add_to_head(el);
-            }
-            function ac_add_style(css) {
-              var ac_style = document.createElement("style");
-              if (ac_style.styleSheet) ac_style.styleSheet.cssText = css;
-              else ac_style.appendChild(document.createTextNode(css));
-              ac_add_to_head(ac_style);
-            }
-            ac_add_link(
-              "https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css"
-            );
-            ac_add_link(
-              "https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css"
-            );
-            ac_add_style(
-              document.getElementById(
-                "ac_style_src-pie-and-donut-charts-pie-chart"
-              ).innerHTML
-            );
-            ac_add_style(
-              ".anychart-embed-src-pie-and-donut-charts-pie-chart{width:600px;height:450px;}"
-            );
-          })();
+
         </script>
         <div
                 id="container"
                 style="padding-top: 110px; padding-left: 80px"
         ></div>
+        <style type="text/css">
+            html,
+            body,
+            #container {
+              width: 100%;
+              height: 100%;
+              margin: 0;
+              padding: 0;
+            }
+        </style>
     </div>
 </div>
 </body>
