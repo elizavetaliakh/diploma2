@@ -1,6 +1,8 @@
 create sequence if not exists users_id_sequence start 1;
 create sequence if not exists query_id_sequence start 1;
 create sequence if not exists client_id_sequence start 1;
+create sequence if not exists service_id_sequence start 1;
+create sequence if not exists onetime_service_id_sequence start 1;
 
 CREATE TABLE IF NOT EXISTS users(
     user_id INTEGER PRIMARY KEY default nextval('users_id_sequence'),
@@ -36,4 +38,4 @@ CREATE TABLE IF NOT EXISTS onetime_service(
     acception_date DATE NOT NULL,
     deadline_date DATE NOT NULL,
     responsible_employee text NOT NULL
-)
+);

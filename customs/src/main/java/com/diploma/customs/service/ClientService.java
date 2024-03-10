@@ -9,5 +9,4 @@ public interface ClientService {
     ClientDto save(ClientDto client);
     void delete(Long clientId);
     List<ClientDto> getAll();
-//    List<ClientDto> selectClients();
 }

@@ -10,7 +10,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @Table(name = "services")
-public class Service {
+public class Services {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "serviceIdGen")
     @SequenceGenerator(name = "serviceIdGen", sequenceName = "service_id_sequence", allocationSize = 1)
@@ -18,14 +18,14 @@ public class Service {
     private Long serviceId;
 
     @Column(name = "service_name")
-    private Long serviceName;
+    private String serviceName;
 
     @Column(name = "service_price")
-    private Long servicePrice;
+    private Float servicePrice;
 
     @Column(name = "product_type")
-    private Long productType;
+    private String productType;
 
     @Column(name = "service_description")
-    private Long serviceDescription;
+    private String serviceDescription;
 }

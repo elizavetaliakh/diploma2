@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="divUpper">
-    <label for="tables" style="padding-right: 5px"
+    <label style="padding-right: 5px"
     >Работа с базой данных</label
     >
 </div>
@@ -51,25 +51,39 @@
             <br />
             <p>Удалить клиента</p>
             ID клиента для удаления: <input id="idClientDelete" /><br />
-            <button class="buttons" id="buttonDeleteClient" onclick="deleteClient()">Удалить</button>
+            <button class="buttons" id="buttonDeleteClient" onclick="deleteClient()">Удалить</button><br>
+        </div><br>
+        <div style="border: 1px solid black; width: 500px;">
+            <p><b>Информация о клиенте</b></p><br>
+            ID клиента: <p id="showClientId">0</p><br>
+            ФИО клиента: <p id="showClientName"></p><br>
+            Дата рождения: <p id="showClientDateBirth"></p><br>
+            Номер телефона: <p id="showClientPhoneNumber"></p><br>
+            Электронная почта: <p id="showClientEmail"></p><br>
+            Номер паспорта: <p id="showClientPassportNumber"></p><br>
+            <button class="buttons" onclick="showClient('previous')"><-</button>
+            <button class="buttons" onclick="showClient('next')">-></button>
+        </div><br>
+        <div>
+            <button onclick="showClientTable()" class="buttons">Вывести таблицу</button><br>
+            <table id="clientsTable" class="tableOutput"></table>
         </div>
-        <div id="table_show_clients"></div>
     </div>
     <div id="divServices">
         <br />
         <h3>2. Таблица services</h3>
         <div id="db_add_service">
             <br />
-            <p id="pAdd">Добавить услугу</p>
+            <p>Добавить услугу</p>
             Название услуги: <input id="serviceName" /><br />
             Цена: <input id="servicePrice" /><br />
             Вид продуктов: <input id="productType" /><br />
             Описание услуги: <input id="serviceDescription" /><br />
-            <button class="buttons" id="buttonAddService">Добавить</button>
+            <button class="buttons" id="buttonAddService" onclick="addService()">Добавить</button>
         </div>
         <div id="db_change_service">
             <br />
-            <p id="pChange">Изменить услугу</p>
+            <p>Изменить услугу</p>
             ID услуги для изменения: <input id="idServiceChange" /><br />
             Название услуги: <input id="serviceName2" /><br />
             Цена: <input id="servicePrice2" /><br />
@@ -79,47 +93,226 @@
         </div>
         <div id="db_delete_service">
             <br />
-            <p id="pDelete">Удалить услугу</p>
-            ID услуги для изменения: <input id="idServiceDelete" /><br />
-            <button class="buttons" id="buttonDeleteService">Удалить</button>
+            <p>Удалить услугу</p>
+            ID услуги для удаления: <input id="idServiceDelete" /><br />
+            <button class="buttons" id="buttonDeleteService" onclick="deleteService()">Удалить</button><br><br>
         </div>
-        <div id="table_show_services"></div>
+        <div style="border: 1px solid black; width: 500px;">
+            <p><b>Информация об услуге</b></p><br>
+            ID услуги: <p id="showServiceId">0</p><br>
+            Название услуги: <p id="showServiceName"></p><br>
+            Цена: <p id="showServicePrice"></p><br>
+            Вид продуктов: <p id="showProductType"></p><br>
+            Описание услуги: <p id="showServiceDescription"></p><br>
+            <button class="buttons" onclick="showService('previous')"><-</button>
+            <button class="buttons" onclick="showService('next')">-></button>
+        </div><br>
+        <div>
+            <button onclick="showServiceTable()" class="buttons">Вывести таблицу</button><br>
+            <table id="servicesTable" class="tableOutput"></table>
+        </div>
     </div>
     <div id="divOneTimeServices">
         <br />
         <h3>3. Таблица onetime_service</h3>
-        <div id="db_add_service">
+        <div id="db_add_onetime_service">
             <br />
-            <p id="pAdd">Добавить операцию</p>
+            <p>Добавить сделку</p>
             ID услуги: <input id="serviceId" /><br />
             ID клиента: <input id="clientId" /><br />
             Дата принятия: <input id="acceptionDate" /><br />
             Срок выполнения: <input id="deadlineDate" /><br />
             ФИО ответственного сотрудника:
             <input id="responsibleEmployee" /><br />
-            <button class="buttons" id="buttonAddOnetimeService">Добавить</button>
+            <button class="buttons" id="buttonAddOnetimeService" onclick="addOnetimeService()">Добавить</button>
         </div>
-        <div id="db_change_service">
+        <div id="db_change_onetime_service">
             <br />
-            <p id="pChange">Изменить операцию</p>
-            ID услуги для изменения: <input id="idServiceChange" /><br />
-            Название услуги: <input id="serviceName2" /><br />
-            Цена: <input id="servicePrice2" /><br />
-            Вид продуктов: <input id="productType2" /><br />
-            Описание услуги: <input id="serviceDescription2" /><br />
+            <p>Изменить сделку</p>
+            ID операции для изменения: <input id="onetimeServiceIdChange" /><br />
+            ID услуги: <input id="serviceId2" /><br />
+            ID клиента: <input id="clientId2" /><br />
+            Дата принятия: <input id="acceptionDate2" /><br />
+            Срок выполнения: <input id="deadlineDate2" /><br />
+            ФИО ответственного сотрудника: <input id="responsibleEmployee2" /><br />
             <button class="buttons" id="buttonChangeOnetimeService">
                 Изменить
             </button>
         </div>
-        <div id="db_delete_service">
+        <div id="db_delete_onetime_service">
             <br />
-            <p id="pDelete">Удалить операцию</p>
-            ID услуги для изменения: <input id="idServiceDelete" /><br />
-            <button class="buttons" id="buttonDeleteOnetimeService">
+            <p>Удалить сделку</p>
+            ID услуги для удаления: <input id="idOnetimeServiceDelete" /><br />
+            <button class="buttons" id="buttonDeleteOnetimeService" onclick="deleteOnetimeService()">
                 Удалить
+            </button><br><br>
+        </div>
+        <div style="border: 1px solid black; width: 500px;">
+            <p><b>Информация о сделке</b></p><br>
+            ID разовой операции: <p id="showOnetimeServiceId">0</p><br>
+            ID услуги: <p id="showServiceId2"></p><br>
+            ID клиента: <p id="showClientId2"></p><br>
+            Дата принятия: <p id="showAcceptionDate"></p><br>
+            Срок выполнения: <p id="showDeadlineDate"></p><br>
+            ФИО ответственного сотрудника: <p id="showResponsibleEmployee"></p><br>
+            <button class="buttons" onclick="showOnetimeService('previous')"><-</button>
+            <button class="buttons" onclick="showOnetimeService('next')">-></button>
+        </div><br>
+        <div>
+            <button onclick="showOnetimeServiceTable()" class="buttons">Вывести таблицу</button><br>
+            <table id="onetimeServicesTable" class="tableOutput"></table>
+        </div>
+    </div>
+    <div id="divOperations">
+        <br />
+        <h3>4. Таблица operations</h3>
+        <div id="db_add_operation">
+            <br/>
+            <p>Добавить операцию</p>
+            To mail message ID: <input id="toMailMessageId" /><br />
+            Custom: <input id="custom" /><br />
+            Pto: <input id="pto" /><br />
+            Lnp photography: <input id="lnpPhotography" /><br />
+            Lnp inspection: <input id="lnpInspection" /><br />
+            Lnp custom: <input id="lnpCustom" /><br />
+            Lnp warehouse: <input id="lnpWarehouse" /><br />
+            Date photography: <input id="datePhotography" /><br />
+            Date inspection: <input id="dateInspection" /><br />
+            Date custom: <input id="dateCustom" /><br />
+            Date warehouse: <input id="dateWarehouse" /><br />
+            Good description: <input id="goodDescription" /><br />
+            Name inspection: <input id="nameInsp" /><br />
+            Requirement: <input id="requirement" /><br />
+            Sign passport: <input id="signPassport" /><br />
+            Sign passport detail: <input id="signPassportDetail" /><br />
+            Date send: <input id="dateSend" /><br />
+            Sign auto release: <input id="signAutoRelease" /><br />
+            Sign risk: <input id="signRisk" /><br />
+            Inspection cost: <input id="inspCost" /><br />
+            Inspection currency code: <input id="inspCurrencyCode" /><br />
+            Inspection full name: <input id="inspFullName" /><br />
+            Status: <input id="status" /><br />
+            Status text: <input id="statusText" /><br />
+            Sign medical: <input id="signMedical" /><br />
+            Sign medical comment: <input id="signMedicalComment" /><br />
+            Release weight: <input id="releaseWeight" /><br />
+            Release note: <input id="releaseNote" /><br />
+            Refuse cause: <input id="refuseCause" /><br />
+            Refuse note: <input id="refuseNote" /><br />
+            Detencion cause: <input id="detencionCause" /><br />
+            Detencion note: <input id="detencionNote" /><br />
+            Detencion code: <input id="detencionCode" /><br />
+            Inspection corrected: <input id="inspCorrected" /><br />
+            To send: <input id="toSend" /><br />
+            Sign risk detail: <input id="signRiskDetail" /><br />
+            Sign requirement: <input id="signReq" /><br />
+            Inspection weight mail: <input id="inspWeightMail" /><br />
+            Inspection total cost (eur): <input id="inspTotalCostEur" /><br />
+            <button class="buttons" id="buttonAddOperation" onclick="addOperation()">Добавить</button>
+        </div>
+        <div id="db_change_operation">
+            <br />
+            <p>Изменить операцию</p>
+            ID операции для изменения: <input id="idOperation" /><br />
+            To mail message ID: <input id="toMailMessageId2" /><br />
+            Custom: <input id="custom2" /><br />
+            Pto: <input id="pto2" /><br />
+            Lnp photography: <input id="lnpPhotography2" /><br />
+            Lnp inspection: <input id="lnpInspection2" /><br />
+            Lnp custom: <input id="lnpCustom2" /><br />
+            Lnp warehouse: <input id="lnpWarehouse2" /><br />
+            Date photography: <input id="datePhotography2" /><br />
+            Date inspection: <input id="dateInspection2" /><br />
+            Date custom: <input id="dateCustom2" /><br />
+            Date warehouse: <input id="dateWarehouse2" /><br />
+            Good description: <input id="goodDescription2" /><br />
+            Name inspection: <input id="nameInsp2" /><br />
+            Requirement: <input id="requirement2" /><br />
+            Sign passport: <input id="signPassport2" /><br />
+            Sign passport detail: <input id="signPassportDetail2" /><br />
+            Date send: <input id="dateSend2" /><br />
+            Sign auto release: <input id="signAutoRelease2" /><br />
+            Sign risk: <input id="signRisk2" /><br />
+            Inspection cost: <input id="inspCost2" /><br />
+            Inspection currency code: <input id="inspCurrencyCode2" /><br />
+            Inspection full name: <input id="inspFullName2" /><br />
+            Status: <input id="status2" /><br />
+            Status text: <input id="statusText2" /><br />
+            Sign medical: <input id="signMedical2" /><br />
+            Sign medical comment: <input id="signMedicalComment2" /><br />
+            Release weight: <input id="releaseWeight2" /><br />
+            Release note: <input id="releaseNote2" /><br />
+            Refuse cause: <input id="refuseCause2" /><br />
+            Refuse note: <input id="refuseNote2" /><br />
+            Detencion cause: <input id="detencionCause2" /><br />
+            Detencion note: <input id="detencionNote2" /><br />
+            Detencion code: <input id="detencionCode2" /><br />
+            Inspection corrected: <input id="inspCorrected2" /><br />
+            To send: <input id="toSend2" /><br />
+            Sign risk detail: <input id="signRiskDetail2" /><br />
+            Sign requirement: <input id="signReq2" /><br />
+            Inspection weight mail: <input id="inspWeightMail2" /><br />
+            Inspection total cost (eur): <input id="inspTotalCostEur2" /><br />
+            <button class="buttons" id="buttonChangeOperation">Изменить
             </button>
         </div>
-        <div id="table_show_onetime_service"></div>
+        <div id="db_delete_operation">
+            <br />
+            <p>Удалить операцию</p>
+            ID операции для удаления: <input id="idOperationDelete" /><br />
+            <button class="buttons" id="buttonDeleteOperation" onclick="deleteOperation()">
+                Удалить
+            </button><br><br>
+        </div>
+        <div style="border: 1px solid black; width: 500px;">
+            <p><b>Информация об операции</b></p><br>
+            ID операции для изменения: <p id="showOperationId">0</p><br>
+            To mail message ID: <p id="showToMailMessageId"></p><br>
+            Custom: <p id="showCustom"></p><br>
+            Pto: <p id="showPto"></p><br>
+            Lnp photography: <p id="showLnpPhotography"></p><br>
+            Lnp inspection: <p id="showLnpInspection"></p><br>
+            Lnp custom: <p id="showLnpCustom"></p><br>
+            Lnp warehouse: <p id="showLnpWarehouse"></p><br>
+            Date photography: <p id="showDatePhotography"></p><br>
+            Date inspection: <p id="showDateInspection"></p><br>
+            Date custom: <p id="showDateCustom"></p><br>
+            Date warehouse: <p id="showDateWarehouse"></p><br>
+            Good description: <p id="showGoodDescription"></p><br>
+            Name inspection: <p id="showNameInspection"></p><br>
+            Requirement: <p id="showRequirement"></p><br>
+            Sign passport: <p id="showSignPassport"></p><br>
+            Sign passport detail: <p id="showSignPassportDetail"></p><br>
+            Date send: <p id="showDateSend"></p><br>
+            Sign auto release: <p id="showSignAutoRelease"></p><br>
+            Sign risk: <p id="showSignRisk"></p><br>
+            Inspection cost: <p id="showInspectionCost"></p><br>
+            Inspection currency code: <p id="showInspectionCurrencyCode"></p><br>
+            Inspection full name: <p id="showInspectionFullName"></p><br>
+            Status: <p id="showStatus"></p><br>
+            Status text: <p id="showStatusText"></p><br>
+            Sign medical: <p id="showSignMedical"></p><br>
+            Sign medical comment: <p id="showSignMedicalComment"></p><br>
+            Release weight: <p id="showReleaseWeight"></p><br>
+            Release note: <p id="showReleaseNote"></p><br>
+            Refuse cause: <p id="showRefuseCause"></p><br>
+            Refuse note: <p id="showRefuseNote"></p><br>
+            Detencion cause: <p id="showDetencionCause"></p><br>
+            Detencion note: <p id="showDetencionNote"></p><br>
+            Detencion code: <p id="showDetencionCode"></p><br>
+            Inspection corrected: <p id="showInspectionCorrected"></p><br>
+            To send: <p id="showToSend"></p><br>
+            Sign risk detail: <p id="showSignRiskDetail"></p><br>
+            Sign requirement: <p id="showSignRequirement"></p><br>
+            Inspection weight mail: <p id="showInspectionWeightMail"></p><br>
+            Inspection total cost (eur): <p id="showInspectionTotalCostEur"></p><br>
+            <button class="buttons" onclick="showOperation('previous')"><-</button>
+            <button class="buttons" onclick="showOperation('next')">-></button>
+        </div><br>
+        <div>
+            <button onclick="showOperationTable()" class="buttons">Вывести таблицу</button><br>
+            <table id="operationTable" class="tableOutput"></table>
+        </div>
     </div>
 </div>
 </body>

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ServiceDto {
+public class ServicesDto {
     private Long serviceId;
     private String serviceName;
     private Float servicePrice;
