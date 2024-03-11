@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Report constructor</title>
     <link rel="stylesheet" href="css/reportsStyles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/app.js"></script>
 </head>
 <body>
 <div class="divUpper"></div>
@@ -33,9 +35,12 @@
                         Таблица:
                     </td>
                     <td class="col2" style="padding: 2px">
-                        <select id="tables" name="tables" class="selectStyle">
-                            <option value="table1">Таблица 1</option>
-                            <option value="table2">Таблица 2</option>
+                        <select id="tables" name="tables" class="selectStyle" onchange="showDateFields()">
+                            <option value="none">-</option>
+                            <option value="clients">clients</option>
+                            <option value="onetime_service">onetime_service</option>
+                            <option value="operations">operations</option>
+                            <option value="services">services</option>
                         </select>
                     </td>
                 </tr>
@@ -45,8 +50,7 @@
                     </td>
                     <td class="col2" style="padding: 2px">
                         <select id="periodFields" name="periodFields" class="selectStyle">
-                            <option value="periodField1">поле 1</option>
-                            <option value="periodField2">поле 2</option>
+                            <option value="periodField1">-</option>
                         </select>
                     </td>
                 </tr>
@@ -63,23 +67,11 @@
                         Поля:
                     </td>
                     <td class="col2" style="padding: 2px">
-
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
                         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
                         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
                         <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" type="text/css"/>
-                        <script>
-                    $(document).ready(function() {
-                    $('#example-getting-started').multiselect();
-                    });
-                  </script>
-
-                        <select id="fields" name="fields" multiple="multiple" class="selectStyle">
-                            <option value="field1">поле 1</option>
-                            <option value="field2">поле 2</option>
-                            <option value="field3">поле 3</option>
-                        </select>
                     </td>
                 </tr>
             </table>
@@ -88,10 +80,11 @@
                     type="button"
                     id="makeReport"
                     name="makeReport"
-                    width="50px"
+                    width="100px"
                     height="10px"
+                    onclick="makeReport()"
             >
-                Скачать
+                Сформировать
             </button>
             </div>
         </div>

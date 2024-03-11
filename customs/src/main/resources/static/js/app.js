@@ -655,18 +655,18 @@ function changeClient() {
     let passportNumber = document.getElementById('passportNumber2').value;
     if(clientId!=null && fullName!=null && dateBirth!=null && phoneNumber!=null && email!=null && passportNumber!=null){
         $.ajax({
-             type: 'POST',
+             method: 'POST',
              url: '/api/clients/update',
              dataType: 'text',
              contentType: 'application/json',
-             data: JSON.stringify({
+             data:{
                 "clientId": clientId,
                 "clientFullName": fullName,
                 "birthDate": dateBirth,
                 "clientPhoneNumber": phoneNumber,
                 "clientEmail": email,
                 "passportNumber": passportNumber
-             }),
+             },
              success: function (response) {
                   console.log('Клиент обновлен в бд:', response);
                   alert('Клиент обновлен в бд.');
@@ -1285,4 +1285,41 @@ function showOperation(value) {
             document.getElementById('showInspectionTotalCostEur').innerHTML = '';
         }
     });
+}
+function showDateFields() {
+    var catalog = 'customs';
+    var table = document.getElementById('tables').value;
+    if(table == 'clients') {
+        $('#periodFields').find('option').remove();
+        $('#periodFields').append(new Option('birth_date', 'birth_date'));
+    }
+    else if(table == 'onetime_service') {
+        $('#periodFields').find('option').remove();
+        $('#periodFields').append(new Option('acception_date', 'acception_date'));
+        $('#periodFields').append(new Option('deadline_date', 'deadline_date'));
+    }
+    else if(table == 'operations') {
+        $('#periodFields').find('option').remove();
+        $('#periodFields').append(new Option('date_photography', 'date_photography'));
+        $('#periodFields').append(new Option('date_inspection', 'date_inspection'));
+        $('#periodFields').append(new Option('date_custom', 'date_custom'));
+        $('#periodFields').append(new Option('date_warehouse', 'date_warehouse'));
+        $('#periodFields').append(new Option('date_send', 'date_send'));
+    }
+    else if(table == 'services') {
+        $('#periodFields').find('option').remove();
+    }
+}
+function makeReport() {
+    const XlsxPopulate = require('xlsx-populate');
+
+    // Load a new blank workbook
+    XlsxPopulate.fromBlankAsync()
+        .then(workbook => {
+            // Modify the workbook.
+            workbook.sheet("Sheet1").cell("A1").value("This is neat!");
+
+            // Write to file.
+            return workbook.toFileAsync("./out.xlsx");
+        });
 }
